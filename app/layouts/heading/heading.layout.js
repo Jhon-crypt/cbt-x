@@ -11,7 +11,7 @@ app.directive("heading", function(){
                 <a class="navbar-brand" href="#">
 
                     <b>
-                            
+                        <font color="#00AAF4"><i class="fa fa-check-square-o"></i> CBT</font>-<font color="orange">X</font>
                     </b>
                 
                 </a>
