@@ -26,7 +26,13 @@ app.directive("landingPage", function(){
                     </li>
 
                 </ul>
+
             </div>
+
+            <div class="text-center pt-5 text-muted">
+                <small>Made with &#128151 by &#x26A1 Oladele John and STA © 2022</small>
+            </div>
+
         </div>
         
         `
