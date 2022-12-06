@@ -10,7 +10,7 @@ class views{
 
         $this->index_page = '
         
-        
+        <h1>Hello CBT-X</h1>
         
         ';
 

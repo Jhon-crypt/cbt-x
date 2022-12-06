@@ -2,5 +2,10 @@
     "require": {
         "phpfastcache/phpfastcache": "^9.1",
         "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload":{
+        "classmap": [
+            "App/views"
+        ]
     }
 }
