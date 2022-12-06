@@ -53,6 +53,8 @@ class views{
 
             <main>
 
+                <heading></heading>
+
                 <ng-view></ng-view>
 
             </main>
@@ -61,7 +63,9 @@ class views{
 
             <script src="./app/route/route.js"></script>
 
-            <script src="./app/layouts/landing-page-layout/landing-page.layout.js"></script>
+            <script src="./app/layouts/heading/heading.layout.js"></script>
+
+            <script src="./app/layouts/searchLayout/search.layout.js"></script>
 
         </body>
     
