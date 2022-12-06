@@ -7,10 +7,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta name="description" content="">
             <meta name="author" content="Oladele John, JohnOx">
-            <title>Devprofile</title>
-
-            <!-- custom CS -->
-            <link href="index.css" rel="stylesheet">
+            <title>CBT-X</title>
 
             <!-- Bootstrap core CSS -->
             <link href="./app/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
