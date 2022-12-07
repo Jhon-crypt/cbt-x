@@ -67,6 +67,21 @@ class views{
 
             <script src="./app/layouts/searchLayout/search.layout.js"></script>
 
+            <script src="./app/layouts/signupLayout/signup.layout.js"></script>
+
+            <script src="./app/layouts/loginLayout/login.layout.js"></script>
+
+            <script src="./app/layouts/signupLayout/success.layout.js"></script>
+
+            <script src="./app/controllers/test-exams-cardsController/test-exams.controller.js"></script>
+
+            <script src="./app/layouts/heading/navbar.layout.js"></script>
+
+            <script src="./app/layouts/dashboardLayout/dashboard.layout.js"></script>
+
+            <script src="./app/layouts/createLayout/create.layout.js"></script>
+
+
         </body>
     
     </html>
