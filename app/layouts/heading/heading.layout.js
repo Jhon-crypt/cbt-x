@@ -26,19 +26,19 @@ app.directive("heading", function(){
 
                         <li class="nav-item">
                             <a class="nav-link active" href="#!login">
-                                <i class="fa fa-sign-in"></i> Login
+                                <font color="#00AAF4"><i class="fa fa-sign-in"></i></font> Login
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#!signup">
+                                <font color="#00AAF4"><i class="fa fa-user-circle-o"></i></font> Signup
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link active" href="#/!">
-                                <i class="fa fa-user-circle-o"></i> Signup
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <i class="fa fa-search"></i> Search Devs
+                            <font color="#00AAF4"><i class="fa fa-search"></i></font> Search test/exam
                             </a>
                         </li>
 
