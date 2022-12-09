@@ -19,5 +19,17 @@ $routeProvider
     .when("/create", {
         templateUrl : "./app/views/createView/create.view.html"
     })
+    .when("/createSuccess", {
+        templateUrl : "./app/views/createView/create-success.view.html"
+    })
+    .when("/setQuestions", {
+        templateUrl : "./app/views/set-questionView/set-question.view.html"
+    })
+    .when("/delete", {
+        templateUrl : "./app/views/deleteView/delete.view.html"
+    })
+    .when("/analytics", {
+        templateUrl : "./app/views/analyticsView/analytics.view.html"
+    })
 
 });
