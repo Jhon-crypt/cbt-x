@@ -101,9 +101,33 @@ app.directive("dashboard", function(){
 
                             </div>
 
+                            <div class="mt-2 mb-2" align="center">
+
+                                <div class="dropdown">
+
+                                    <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown">
+
+                                        Settings <i class="fa fa-cogs"></i>
+
+                                    </button>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#!analytics">
+                                            <i class="fa fa-bar-chart"></i> {{ x.type }} analytics</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#!setQuestions">
+                                            <i class="fa fa-list-alt"></i> Set questions</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#!delete">
+                                            <i class="fa fa-trash"></i> Delete {{ x.type }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
 
                             <p class="text-center text-muted pt-2">
-                                Created by {{ x.author }}
+                                Created by @{{ x.author }}
                             </p>
 
                             <div align="center">

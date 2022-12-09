@@ -6,7 +6,7 @@ app.directive("signup", function(){
         
         <div class="container pt-5 mt-5" align="center">
 
-            <form action="#!success">
+            <form>
                 <h3><font color="#00AAF4"><i class="fa fa-check-square-o"></i> CBT</font>-<font color="orange">X</font></h3>
                 <h2 class="h3 mb-3 fw-normal">Sign Up</h2>
     
