@@ -19,6 +19,9 @@ $routeProvider
     .when("/create", {
         templateUrl : "./app/views/createView/create.view.html"
     })
+    .when("/more", {
+        templateUrl : "./app/views/moreView/more.view.html"
+    })
     .when("/createSuccess", {
         templateUrl : "./app/views/createView/create-success.view.html"
     })
