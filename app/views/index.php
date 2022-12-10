@@ -95,6 +95,16 @@ class views{
 
             <script src="./app/layouts/analyticsLayout/analytics.layout.js"></script>
 
+            <script src="./app/controllers/participatedUsersController/participated-users.controller.js"></script>
+
+            <script src="./app/layouts/moreLayout/more.layout.js"></script>
+
+            <script src="./app/layouts/moreLayout/modals/profile.modal.layout.js"></script>
+
+            <script src="./app/layouts/moreLayout/modals/settings.modal.layout.js"></script>
+
+            <script src="./app/layouts/moreLayout/modals/socials.modal.layout.js"></script>
+
         </body>
     
     </html>
