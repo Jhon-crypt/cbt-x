@@ -17,7 +17,7 @@ app.directive("heading", function(){
                 </a>
 
                 <button class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-                    <font color="#5379F6"><i class="fa fa-navicon"></i></font>
+                    <font color="orange"><i class="fa fa-navicon"></i></font>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExample01">
@@ -26,19 +26,19 @@ app.directive("heading", function(){
 
                         <li class="nav-item">
                             <a class="nav-link active" href="#!login">
-                                <font color="#00AAF4"><i class="fa fa-sign-in"></i></font> Login
+                                <font color="orange"><i class="fa fa-sign-in"></i></font> Login
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link active" href="#!signup">
-                                <font color="#00AAF4"><i class="fa fa-user-circle-o"></i></font> Signup
+                                <font color="orange"><i class="fa fa-user-circle-o"></i></font> Signup
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link active" href="#/!">
-                            <font color="#00AAF4"><i class="fa fa-search"></i></font> Search test/exam
+                            <font color="orange"><i class="fa fa-search"></i></font> Search test/exam
                             </a>
                         </li>
 

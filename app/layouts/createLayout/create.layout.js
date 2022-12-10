@@ -42,6 +42,11 @@ app.directive("create", function(){
 
                     <div class="form-floating mb-3" style="width:300px">
                         <input type="number" class="form-control" id="floatingInput" placeholder="10 minutes">
+                        <label for="floatingInput"><i class="fa fa-exchange"></i> Info from user</label>
+                    </div>
+
+                    <div class="form-floating mb-3" style="width:300px">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="10 minutes">
                         <label for="floatingInput"><i class="fa fa-clock-o"></i> Time limit</label>
                     </div>
         
