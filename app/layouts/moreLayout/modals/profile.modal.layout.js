@@ -27,9 +27,11 @@ app.directive("profileModal", function(){
 
                             <p class="text-muted"><i class="fa fa-envelope"></i> johnoladele690@gmail.com</p> 
 
-                            <button class="btn btn-danger">
-                                Logout <i class="fa fa-sign-out"></i>
-                            </button>
+                            <a href="#!logout" style="text-decoration:none;">
+                                <button class="btn btn-danger">
+                                    Logout <i class="fa fa-sign-out"></i>
+                                </button>
+                            </a>
 
                         </div>
 

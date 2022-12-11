@@ -132,15 +132,18 @@ app.directive("dashboard", function(){
 
                             <div align="center">
 
-                                <button class="btn btn-lg text-light" style="background-color:orange">
-                                    Practice {{ x.type }} <i class="fa fa-external-link"></i>
-                                </button>
+                                <a class="text-light" href="#!practice" style="text-decoration:none;">
+                                    <button class="btn btn-lg text-light" style="background-color:orange">
+                                        Practice {{ x.type }} <i class="fa fa-external-link"></i>
+                                    </button>
+                                </a>
 
                             </div>
 
                         </div>
 
                     </div>
+                    <!-- test/exam cards -->
 
                 </div>
 

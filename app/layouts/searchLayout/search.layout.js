@@ -16,9 +16,11 @@ app.directive("search", function(){
                     <label for="floatingInput"><i class="fa fa-check-square"></i> Enter test/exam code</label>
                 </div>
         
-                <button class="btn btn-lg btn-primary" type="submit" style="width:300px;background-color:#00AAF4;">
-                    <b>Search</b> <i class="fa fa-search"></i>
-                </button>
+                <a href="#!searchResult" style="text-decoration:none;">
+                    <button class="btn btn-lg btn-primary" type="submit" style="width:300px;background-color:#00AAF4;">
+                        <b>Search</b> <i class="fa fa-search"></i>
+                    </button>
+                </a>
                 
             </form>            
 

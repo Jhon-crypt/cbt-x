@@ -1,32 +1,70 @@
-app.directive("setQuestions", function(){
+app.directive("practice", function(){
 
     return {
 
         template : `
+
+        <style>
+
+        .jst-hours {
+            float: left;
+          }
+          .jst-minutes {
+            float: left;
+          }
+          .jst-seconds {
+            float: left;
+          }
+          .jst-clearDiv {
+            clear: both;
+          }
+          .jst-timeout {
+            color: red;
+          }
+
+          .fixedTime{
+            position: fixed;
+            bottom: 0px;
+            right: 0px; 
+            padding: 20px;
+        }
+
+        </style>
         
         <div class="container pt-4 mb-5">
 
-            <h1>Set Questions <i class="fa fa-list-alt"></i></h1>
+            <div class="clearfix">
 
-            <span class="text-muted">
-               <i class="fa fa-info-circle"></i> Set questions for the test/exams created
-            </span>
+                <span class="float-start">
+
+                    <h1>Practice test <i class="fa fa-check-square-o"></i></h1>
+
+                    <span class="text-muted">
+                        <i class="fa fa-info-circle"></i> Test/exam simulation
+                    </span>
+
+                </span>
+
+                <span class="float-end">
+
+                    <span class="text-muted">
+                        <i class="fa fa-clock-o"></i> Time left
+                    </span>
+
+                    <h1 class="timer" data-minutes-left="1"></h1>
+
+                </span>
+
+            </div>
+
+            <div class="fixedTime">
+                <small>
+                    <h3 class="timer text-light bg-primary rounded" data-minutes-left="1"></h3>
+                </small>
+            </div>
 
             <hr>
 
-            <div align="center">
-
-                <button class="btn btn-md text-light" 
-                style="background-color:#00AAF4" 
-                data-bs-toggle="modal" 
-                data-bs-target="#setQuestionsModal">
-
-                    <b>Create questions <i class="fa fa-plus-circle"></i></b>
-
-                </button>
-
-            </div>
-    
             <div class="pt-4 mt-4">
 
                 <ul class="nav flex-column">
@@ -90,7 +128,7 @@ app.directive("setQuestions", function(){
                                     <br>
 
                                     <select class="form-control" name="ansForQ1">
-                                        <option>Correct option</option>
+                                        <option>Answer</option>
                                         <option>optionA</option>
                                         <option>optionB</option>
                                         <option>optionC</option>
@@ -117,9 +155,33 @@ app.directive("setQuestions", function(){
             </div>
             <!-- end of question -->
 
+            <div align="center">
+
+                <a href="#!end" class="text-light" style="text-decoartion:none;">
+                    <button class="btn btn-lg text-light" style="background-color:#00AAf4">
+
+                        Submit Test
+
+                    </button>
+                </a>
+
+            </div>
+
         </div>
 
-        <
+        <script>
+
+            $(document).ready(function() {
+
+                $('.timer').startTimer({
+                    onComplete:function(element){
+                        window.location.href = "#!end"
+                    }
+                  });
+    
+            });
+            
+        </script>
         
         `
 
