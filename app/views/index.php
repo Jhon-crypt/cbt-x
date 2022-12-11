@@ -40,6 +40,13 @@ class views{
             <!-- JavaScript Bundle with Popper -->
             <script src="./app/assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
+            <!-- jquery -->
+            <script src="./app/assets/jquery/jquery-3.6.0.min.js"></script>
+
+            <!-- timer plugin -->
+            <!-- jquery -->
+            <script src="./app/assets/timer-plugin/jquery.simple.timer.js"></script>
+
             <!-- angular Js -->
             <script src="./app/assets/angular-1.8.2/angular.min.js"></script>
 
@@ -104,6 +111,14 @@ class views{
             <script src="./app/layouts/moreLayout/modals/settings.modal.layout.js"></script>
 
             <script src="./app/layouts/moreLayout/modals/socials.modal.layout.js"></script>
+
+            <script src="./app/layouts/practiceLayout/practice.layout.js"></script>
+
+            <script src="./app/layouts/practiceLayout/end.layout.js"></script>
+
+            <script src="./app/layouts/logoutLayout/logout.layout.js"></script>
+
+            <script src="./app/layouts/searchLayout/search-result.layout.js"></script>
 
         </body>
     
