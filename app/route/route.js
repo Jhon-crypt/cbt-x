@@ -34,5 +34,17 @@ $routeProvider
     .when("/analytics", {
         templateUrl : "./app/views/analyticsView/analytics.view.html"
     })
+    .when("/practice", {
+        templateUrl : "./app/views/practiceView/practice.view.html"
+    })
+    .when("/end", {
+        templateUrl : "./app/views/practiceView/end.view.html"
+    })
+    .when("/logout", {
+        templateUrl : "./app/views/logoutViews/logout.view.html"
+    })
+    .when("/searchResult", {
+        templateUrl : "./app/views/searchView/search-result.view.html"
+    })
 
 });
