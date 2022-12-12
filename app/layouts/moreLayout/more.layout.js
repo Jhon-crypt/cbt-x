@@ -46,6 +46,14 @@ app.directive("more", function(){
 
                 </li>
 
+                <li class="list-group-item">
+
+                    <a class="text-danger" href="#!logout" style="text-decoration:none;">
+                        <i class="fa fa-sign-out"></i> Logout, come back soon
+                    </a>
+
+                </li>
+
             </ul>
 
         </div>

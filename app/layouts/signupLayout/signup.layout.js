@@ -35,7 +35,7 @@ app.directive("signup", function(){
                 </div>
 
                 <p>Already have an account, Login <a href="#!login">here</a></p>
-        
+                
                 <a href="#!success" style="text-decoration:none;">
                 <button class="btn btn-lg btn-primary" type="submit" style="width:300px;background-color:#00AAF4;">
                     <b>Sign Up <i class="fa fa-user-circle"></i></b>

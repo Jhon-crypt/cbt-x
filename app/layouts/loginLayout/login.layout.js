@@ -20,13 +20,17 @@ app.directive("login", function(){
                     <label for="floatingInput"><i class="fa fa-lock"></i> Password</label>
                 </div>
 
-                <p>Don't have an account, Sign Up <a href="#!signup">here</a></p>
+                <small>
+                    <p>Forgot Password, <a href="#!forgotPassword">Click here</a></p>
+                </small>
         
                 <a href="#!dashboard" style="text-decoration:none;">
                 <button class="btn btn-lg btn-primary" type="submit" style="width:300px;background-color:#00AAF4;">
                     <b>Login <i class="fa fa-sign-in"></i></b>
                 </button>
                 </a>
+
+                <p>Don't have an account, Sign Up <a href="#!signup">here</a></p>
                 
             </form>            
 
