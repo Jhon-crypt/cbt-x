@@ -46,5 +46,5 @@ $routeProvider
     .when("/searchResult", {
         templateUrl : "./app/views/searchView/search-result.view.html"
     })
-
+    
 });
