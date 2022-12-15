@@ -3,6 +3,30 @@ app.directive("home", function(){
     return {
 
         template : `
+
+        <style>
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            
+            overflow-y: hidden;
+          }
+          
+          .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            color: rgba(255, 255, 255, .75);
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+          }
+          
+
+        </style>
         
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
@@ -129,9 +153,144 @@ app.directive("home", function(){
 
                         <h4><i class="fa fa-check-square"></i> Top exams</h4>
 
-                        <div class="card-body">
+                        <div class="card-body pt-4">
 
-                            
+                            <div class="nav-scroller">
+
+                                <nav class="nav nav-underline" aria-label="Secondary navigation">
+                                    <a class="nav-link text-white" href="#">
+
+                                        <div class="card bg-light" style="width:300px;">
+
+                                            <div class="text-light" style="background-color:#00AAF4">
+
+                                                <div class="container pt-3 pb-3">
+
+                                                    <div class="col d-flex align-items-start">
+                                                        <div class="flex-shrink-0 me-3">
+                                                            <h2><font color="orange"><i class="fa fa-mortar-board"></i></font></h2>
+                                                        </div>
+                                                        <div>
+                                                            <h2>{{ x.title }}</h2>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr>
+
+                                                    <div class="col d-flex align-items-start">
+                                                        <div class="flex-shrink-0 me-3">
+                                                            <h2><font color="orange"><i class="fa fa-align-left"></i></font></h2>
+                                                        </div>
+                                                        <div>
+                                                            <h2>Description</h2>
+                                                            <p>{{ x.about }}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                    
+
+                                            </div>
+
+                                            <div class="card-body">
+
+                                                <div class="clearfix">
+
+                                                    <span class="float-start">
+
+                                                        <i class="fa fa-list-ul"></i> {{ x.question }} questions
+
+                                                    </span>
+
+                                                    <span class="float-end">
+
+                                                        <i class="fa fa-clock-o"></i> {{ x.timeLimit }} minutes
+
+                                                    </span>
+
+                                                </div>
+
+                                                <div class="clearfix">
+
+                                                    <span class="float-start">
+
+                                                        <i class="fa fa-star-o"></i> {{ x.status }}
+
+                                                    </span>
+
+                                                    <span class="float-end">
+
+                                                        <i class="fa fa-genderless"></i> {{ x.type }}
+
+                                                    </span>
+
+                                                </div>
+
+                                                <div class="clearfix">
+
+                                                    <span class="float-start">
+
+                                                        <i class="fa fa-table"></i> {{ x.dateCreated }}
+
+                                                    </span>
+
+                                                    <span class="float-end">
+
+                                                        <i class="fa fa-clock-o"></i> {{ x.timeCreated }}
+
+                                                    </span>
+
+                                                </div>
+
+                                                <div class="mt-2 mb-2" align="center">
+
+                                                    <div class="dropdown">
+
+                                                        <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown">
+
+                                                            Settings <i class="fa fa-cogs"></i>
+
+                                                        </button>
+
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#!analytics">
+                                                                <i class="fa fa-bar-chart"></i> {{ x.type }} analytics</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#!setQuestions">
+                                                                <i class="fa fa-list-alt"></i> Set questions</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#!delete">
+                                                                <i class="fa fa-trash"></i> Delete {{ x.type }}</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+
+                                                <p class="text-center text-muted pt-2">
+                                                    Created by @{{ x.author }}
+                                                </p>
+
+                                                <div align="center">
+
+                                                    <a class="text-light" href="#!practice" style="text-decoration:none;">
+                                                        <button class="btn btn-lg text-light" style="background-color:orange">
+                                                            Practice {{ x.type }} <i class="fa fa-external-link"></i>
+                                                        </button>
+                                                    </a>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <!-- test/exam cards -->
+
+
+                                    </a>
+                                </nav>
+
+                            </div>
 
                         </div>
 
