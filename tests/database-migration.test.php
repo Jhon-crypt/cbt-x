@@ -14,6 +14,8 @@ use App\database\migration\dbMigration\testExamDbMigration;
 
 use App\database\migration\dbMigration\resultDbMigration;
 
+use App\database\migration\dbMigration\infoDbMigration;
+
 class testingDatabaseMigration{
 
     public function testUserAccountDbMigration(){
@@ -56,6 +58,16 @@ class testingDatabaseMigration{
 
     }
 
+    public function infoDbMigration(){
+
+        $info_db_migration = new infoDbMigration();
+
+        $info_db_migration->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"mysqli");
+
+        $info_db_migration->createInfoDatabase();
+
+    }
+
 }
 
 $testing_database_migration = new testingDatabaseMigration();
@@ -66,6 +78,8 @@ $testing_database_migration = new testingDatabaseMigration();
 
 //$testing_database_migration->testExamDbMigration();
 
-$testing_database_migration->resultDbMigration();
+//$testing_database_migration->resultDbMigration();
+
+$testing_database_migration->infoDbMigration();
 
 ?>
