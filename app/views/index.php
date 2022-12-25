@@ -120,6 +120,9 @@ class views{
 
             <script src="./app/layouts/searchLayout/search-result.layout.js"></script>
 
+            <script src="./app/controllers/signupController/signup.controller.js"></script>
+
+
         </body>
     
     </html>

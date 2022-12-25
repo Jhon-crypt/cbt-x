@@ -1,0 +1,200 @@
+<?php
+
+require("../../../vendor/autoload.php");
+
+use App\database\connection\userAccountDbConnection;
+
+use App\database\connection\testExamsDbConnection;
+
+use App\models\signupModel\signupModel;
+
+//loading env variables
+$env = Dotenv\Dotenv::createImmutable('../../../');
+$env->load();
+
+
+class signupService{
+
+    //db connections
+    public $user_account_connect;
+    
+    public $test_exams_connect;
+
+    //sign up data
+    public $email;
+
+    public $gender;
+
+    public $username;
+
+    public $password;
+
+    public $user_data_status;
+
+    //auto generated data
+    public $encrypted_password;
+
+    public $ref_id;
+
+    public $avatar;
+
+    public $date_ceated;
+
+    public $time_created;
+
+    public $status;
+
+    public function dbConnections(){
+
+        //user account db connection
+        $user_account_db_connection = new userAccountDbConnection();
+        $user_account_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_users","mysqli");
+        $this->user_account_connect = $user_account_db_connection->user_account_conn;
+
+        //test and exams db connection
+        $test_exams_db_connection = new testExamsDbConnection();
+        $test_exams_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_test_exam","mysqli");
+        $this->test_exams_connect = $test_exams_db_connection->test_exams_conn;
+
+    }
+
+    public function userData(){
+
+        $post_data = file_get_contents("php://input");
+
+        $sign_up_data = json_decode($post_data);
+
+        if(isset($sign_up_data->email) && $sign_up_data->email !== "" 
+        && isset($sign_up_data->gender) && $sign_up_data->gender!== "" 
+        && isset($sign_up_data->username) && $sign_up_data->password !== "" ){
+
+           $this->email =  $sign_up_data->email;
+
+           $this->gender = $sign_up_data->gender;
+
+           $this->username = $sign_up_data->username;
+
+           $this->password = $sign_up_data->password;
+           
+           $this->user_data_status = TRUE;
+        
+           /*
+           $result = array([
+                'email' => $this->email,
+                'gender' => $this->gender,
+                'username' => $this->username,
+                'password' => $this->password
+            ]);
+        
+            echo json_encode($result); 
+            */
+
+        }
+
+    }
+
+
+    public function sanitize($connection,$data){
+
+        $data = htmlspecialchars($data);
+        $data = stripslashes($data);
+        $data = strip_tags($data);
+        $data = $connection->real_escape_string($data);
+
+        return $data; 
+
+    }
+
+    
+    public function sanitizeSignUpData(){
+
+        
+        $this->email = $this->sanitize(
+            $this->user_account_connect,
+            $this->email
+        );
+
+        $this->gender = $this->sanitize(
+            $this->user_account_connect,
+            $this->gender
+        );
+
+        $this->username = $this->sanitize(
+            $this->user_account_connect,
+            $this->username
+        );
+
+        $this->password = $this->sanitize(
+            $this->user_account_connect,
+            $this->password
+        ); 
+        
+
+        //insert into the database
+        /*
+        $statement = "INSERT INTO user_account
+        (
+            email
+        )
+        VALUES(
+            '$this->email'
+        )";
+
+        $connect->query($statement);
+
+        mysqli_close($connect);
+        */
+
+    }
+
+    public function generateBackendData(){
+
+        $this->encrypted_password = md5($this->password);
+
+        $this->ref_id = substr(rand(), 0, -6);
+
+        $this->avatar = "./app/storage/avatar/nftt.png";
+
+        $this->date_created = date("Y/m/d");
+
+        $this->time_created = date("h:i:sa");
+
+    }
+
+    public function runSignupModel(){
+
+        $signup_model = new signupModel();
+
+        $signup_model->createUserTestExamTable($this->test_exams_connect,$this->ref_id);
+
+    }
+
+}
+
+$signup_service = new signupService();
+
+$signup_service->dbConnections();
+
+$signup_service->userData();
+
+if($signup_service->user_data_status === TRUE){
+
+    $signup_service->sanitizeSignUpData();
+
+    $signup_service->generateBackendData();
+
+    $signup_service->runSignupModel();
+
+}else{
+
+    //header("location:#!success")//
+
+    echo "
+    <script>
+    window.location.href = '#!success'
+    </script>
+    ";
+
+}
+
+?>

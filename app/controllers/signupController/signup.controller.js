@@ -1,15 +1,22 @@
 app.controller('signup', function ($scope, $http) {
 
-    $scope.signup = function () {
+    //if(document.getElementById().value !== ""){
 
-        $http({ 
-            method : 'post',
-            url : "./app/services/signupService/signup.service.php",
-            data : $scope.user,
-        }).then(function(response){
-            $scope.myData = response.data;
-        });
+        $scope.signup = function () {
 
-    }
+            $http({ 
+                method : 'post',
+                url : "./app/services/signupService/signup.service.php",
+                data : $scope.user,
+            }).then(function(response){
+
+                /*$scope.myData = response.data;*/
+                window.location.href = "#!success"
+
+            });
+
+        }
+        
+    //}
 
 });

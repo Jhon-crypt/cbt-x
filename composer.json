@@ -1,13 +1,17 @@
 {
     "require": {
         "phpfastcache/phpfastcache": "^9.1",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "smarty/smarty": "^4.3",
+        "trulyao/php-router": "^2.0"
     },
     "autoload":{
         "classmap": [
             "App/views",
             "App/database/migration/dbMigration",
-            "App/database/migration/tableMigration"
+            "App/database/migration/tableMigration",
+            "App/database/connection",
+            "App/models/signupModel"
         ]
     }
 }
