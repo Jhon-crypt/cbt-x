@@ -12,11 +12,11 @@ class userAccountDbConnection{
 
         if($this->user_account_conn->connect_error){
 
-            echo "Could not Connect<br>";
+            //echo "Could not Connect<br>";
 
         }else{
 
-            echo "Connected<br>";
+            //echo "Connected<br>";
 
         }
 

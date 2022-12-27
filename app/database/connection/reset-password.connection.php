@@ -2,15 +2,15 @@
 
 namespace App\database\connection;
 
-class testExamsDbConnection{
+class resetPasswordDbConnection{
 
-    public $test_exams_conn;
+    public $reset_password_conn;
 
     public function connection($sever,$username,$password,$database,$mysqli){
 
-        $this->test_exams_conn = new $mysqli($sever,$username,$password,$database);
+        $this->reset_password_conn = new $mysqli($sever,$username,$password,$database);
 
-        if($this->test_exams_conn->connect_error){
+        if($this->reset_password_conn->connect_error){
 
             //echo "Could not Connect<br>";
 
