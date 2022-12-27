@@ -25,7 +25,7 @@ class cbtX{
     public function cacheIndex(){
 
         CacheManager::setDefaultConfig(new ConfigurationOption([
-            'path' => '', // or in windows "C:/tmp/"
+            'path' => 'cache', // or in windows "C:/tmp/"
         ]));
         
         $InstanceCache = CacheManager::getInstance('files');
