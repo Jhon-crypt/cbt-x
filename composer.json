@@ -11,7 +11,8 @@
             "App/database/migration/dbMigration",
             "App/database/migration/tableMigration",
             "App/database/connection",
-            "App/models/signupModel"
+            "App/models/signupModel",
+            "App/models/loginModel"
         ]
     }
 }
