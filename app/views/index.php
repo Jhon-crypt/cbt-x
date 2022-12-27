@@ -122,6 +122,8 @@ class views{
 
             <script src="./app/controllers/signupController/signup.controller.js"></script>
 
+            <script src="./app/controllers/loginController/login.controller.js"></script>
+
 
         </body>
     
