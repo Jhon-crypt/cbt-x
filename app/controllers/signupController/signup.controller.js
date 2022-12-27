@@ -10,7 +10,7 @@ app.controller('signup', function ($scope, $http) {
                 data : $scope.user,
             }).then(function(response){
 
-                /*$scope.myData = response.data;*/
+                //$scope.myData = response.data;
                 window.location.href = "#!success"
 
             });
