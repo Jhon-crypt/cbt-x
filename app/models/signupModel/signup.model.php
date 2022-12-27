@@ -24,13 +24,48 @@ class signupModel{
 
         if($connection->query($statement)=== TRUE){
 
-            echo "User text/exams table has been created";
+            //echo "User text/exams table has been created";
 
         }else{
 
-            echo "Could not create user test/exams table";
+            //echo "Could not create user test/exams table";
 
         }
+
+    }
+
+    public function userResetPassword($connection,$ref_id,$reset_code){
+
+        $statement = $connection->prepare(" INSERT INTO reset_password 
+        (
+            ref_id, reset_code
+        ) 
+        VALUES (?,?)
+        ");
+
+        $statement->bind_param("ss",$ref_id,$reset_code);
+
+        $statement->execute();
+
+    }
+
+    public function userData(
+        $connection,$email,$username,$password,$ref_id,
+        $avatar,$date_created,$time_created,$status
+    ){
+
+        $statement = $connection->prepare(" INSERT INTO user_account 
+        (
+            email,username,password,ref_id,avatar,date_created,
+            time_created,status
+        )
+        VALUES(?,?,?,?,?,?,?,?)
+        ");
+
+        $statement->bind_param("ssssssss",$email,$username,$password,
+        $ref_id,$avatar,$date_created,$time_created,$status);
+
+        $statement->execute();
 
     }
 
