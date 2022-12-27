@@ -80,6 +80,6 @@ $testing_database_migration = new testingDatabaseMigration();
 
 //$testing_database_migration->resultDbMigration();
 
-$testing_database_migration->infoDbMigration();
+//$testing_database_migration->infoDbMigration();
 
 ?>
