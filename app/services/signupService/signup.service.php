@@ -6,6 +6,8 @@ use App\database\connection\userAccountDbConnection;
 
 use App\database\connection\testExamsDbConnection;
 
+use App\database\connection\resetPasswordDbConnection;
+
 use App\models\signupModel\signupModel;
 
 //loading env variables
@@ -19,6 +21,8 @@ class signupService{
     public $user_account_connect;
     
     public $test_exams_connect;
+
+    public $reset_password_connect;
 
     //sign up data
     public $email;
@@ -35,6 +39,8 @@ class signupService{
     public $encrypted_password;
 
     public $ref_id;
+
+    public $reset_password_code;
 
     public $avatar;
 
@@ -56,9 +62,14 @@ class signupService{
         $test_exams_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_test_exam","mysqli");
         $this->test_exams_connect = $test_exams_db_connection->test_exams_conn;
 
+        //reset password connection
+        $reset_password_db_connection = new resetPasswordDbConnection();
+        $reset_password_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_password_reset","mysqli");
+        $this->reset_password_connect = $reset_password_db_connection->reset_password_conn;
+
     }
 
-    public function userData(){
+    public function fetchSignupUserData(){
 
         $post_data = file_get_contents("php://input");
 
@@ -78,16 +89,17 @@ class signupService{
            
            $this->user_data_status = TRUE;
         
-           /*
-           $result = array([
+           
+           /*$result = array([
                 'email' => $this->email,
                 'gender' => $this->gender,
                 'username' => $this->username,
                 'password' => $this->password
             ]);
         
-            echo json_encode($result); 
-            */
+            echo json_encode($result);
+            */ 
+            
 
         }
 
@@ -129,21 +141,7 @@ class signupService{
             $this->password
         ); 
         
-
-        //insert into the database
-        /*
-        $statement = "INSERT INTO user_account
-        (
-            email
-        )
-        VALUES(
-            '$this->email'
-        )";
-
-        $connect->query($statement);
-
-        mysqli_close($connect);
-        */
+        //mysqli_close($connect);
 
     }
 
@@ -153,11 +151,15 @@ class signupService{
 
         $this->ref_id = substr(rand(), 0, -6);
 
+        $this->reset_password_code = md5($this->ref_id);
+
         $this->avatar = "./app/storage/avatar/nftt.png";
 
         $this->date_created = date("Y/m/d");
 
         $this->time_created = date("h:i:sa");
+
+        $this->status = "new";
 
     }
 
@@ -167,6 +169,22 @@ class signupService{
 
         $signup_model->createUserTestExamTable($this->test_exams_connect,$this->ref_id);
 
+        $signup_model->userResetPassword($this->reset_password_connect,$this->ref_id,$this->reset_password_code);
+
+        $signup_model->userData(
+            $this->user_account_connect,$this->email,$this->username,
+            $this->encrypted_password,$this->ref_id,$this->avatar,
+            $this->date_created,$this->time_created,$this->status
+        );
+
+    }
+
+    public function closeDbConnections(){
+
+        mysqli_close($this->user_account_connect);
+        mysqli_close($this->test_exams_connect);
+        mysqli_close($this->reset_password_connect);
+
     }
 
 }
@@ -175,7 +193,7 @@ $signup_service = new signupService();
 
 $signup_service->dbConnections();
 
-$signup_service->userData();
+$signup_service->fetchSignupUserData();
 
 if($signup_service->user_data_status === TRUE){
 
@@ -185,15 +203,11 @@ if($signup_service->user_data_status === TRUE){
 
     $signup_service->runSignupModel();
 
+    $signup_service->closeDbConnections();
+
 }else{
 
-    //header("location:#!success")//
-
-    echo "
-    <script>
-    window.location.href = '#!success'
-    </script>
-    ";
+    
 
 }
 
