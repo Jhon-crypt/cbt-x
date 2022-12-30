@@ -14,7 +14,7 @@ app.directive("login", function(){
                     <div class="alert alert-success" style="width:300px" 
                     ng-show="{{ x.loggedIn }}">
                         <h4 class="mb-3">Logged In </h4>
-                        <a href="">
+                        <a href="#!dashboard">
                             <button class="btn btn-lg text-light" 
                             style="background-color:#00AAF4;">
                                 <small>Click Here To Continue <i class="fa fa-external-link"></i></small>

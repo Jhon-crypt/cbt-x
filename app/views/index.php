@@ -124,6 +124,11 @@ class views{
 
             <script src="./app/controllers/loginController/login.controller.js"></script>
 
+            <script src="./app/controllers/sessionGuardController/session-guard.controller.js"></script>
+
+            <script src="./app/controllers/testAndExamController/fetchTestAndExam.controller.js"></script>
+
+            <script src="./app/controllers/testAndExamController/createTestAndExam.controller.js"></script>
 
         </body>
     

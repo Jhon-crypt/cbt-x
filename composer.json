@@ -12,7 +12,8 @@
             "App/database/migration/tableMigration",
             "App/database/connection",
             "App/models/signupModel",
-            "App/models/loginModel"
+            "App/models/loginModel",
+            "App/models/testAndExamModel"
         ]
     }
 }

@@ -1,0 +1,73 @@
+<?php
+
+require("../../../vendor/autoload.php");
+
+use App\database\connection\userAccountDbConnection;
+
+use App\database\connection\testExamsDbConnection;
+
+//loading env variables
+$env = Dotenv\Dotenv::createImmutable('../../../');
+$env->load();
+
+class createTestAndExamService{
+
+    //db connections
+    public $test_exams_connect;
+
+
+    public $session_status;
+
+    public $user_session;
+
+    
+    public $title;
+
+    public $type;
+
+    public $total_question;
+
+    public $data_from_user;
+
+    public $time_limit;
+
+
+    public function fetchUserSession(){
+
+        session_start();
+
+        if(isset($_SESSION['login_session'])){
+
+            $this->session_status = TRUE;
+
+            $this->user_session = $_SESSION['login_session'];
+
+        }else{
+
+            $this->session_status = FALSE;
+
+        }
+
+    }
+
+    public function dbConnections(){
+
+        //user account db connection
+        $user_account_db_connection = new userAccountDbConnection();
+        $user_account_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_users","mysqli");
+        $this->user_account_connect = $user_account_db_connection->user_account_conn;
+
+        //test and exams db connection
+        $test_exams_db_connection = new testExamsDbConnection();
+        $test_exams_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_test_exam","mysqli");
+        $this->test_exams_connect = $test_exams_db_connection->test_exams_conn;
+
+    }
+
+}
+
+$create_test_and_exam_service = new createTestAndExamService();
+
+$create_test_and_exam_service->fetchUserSession()
+
+?>

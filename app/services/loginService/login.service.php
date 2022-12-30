@@ -104,6 +104,12 @@ class loginService{
 
     }
 
+    public function closeDbConnections(){
+
+        mysqli_close($this->user_account_connect);
+
+    }
+
 }
 
 $login_service = new loginService();
@@ -115,6 +121,8 @@ $login_service->fetchLoginUserData();
 if($login_service->login_data_status === TRUE){
 
     $login_service->runLoginModel();
+
+    $login_service->closeDbConnections();
 
 }else{
 
