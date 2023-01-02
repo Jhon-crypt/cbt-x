@@ -1,6 +1,6 @@
 app.controller("usersParticipated", 
 
-    function($scope){
+function($scope){
 
         $scope.users = [
 

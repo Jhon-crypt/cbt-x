@@ -13,7 +13,9 @@
             "App/database/connection",
             "App/models/signupModel",
             "App/models/loginModel",
-            "App/models/testAndExamModel"
+            "App/models/testAndExamModel",
+            "App/models/userModel",
+            "App/models/createTestAndExamModel"
         ]
     }
 }
