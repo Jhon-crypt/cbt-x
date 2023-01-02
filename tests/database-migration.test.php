@@ -16,6 +16,11 @@ use App\database\migration\dbMigration\resultDbMigration;
 
 use App\database\migration\dbMigration\infoDbMigration;
 
+use App\database\migration\dbMigration\questionsDbMigration;
+
+use App\database\migration\dbMigration\usersResultMigration;
+
+
 class testingDatabaseMigration{
 
     public function testUserAccountDbMigration(){
@@ -68,6 +73,26 @@ class testingDatabaseMigration{
 
     }
 
+    public function questionsDbMigration(){
+
+        $questions_db_migration = new questionsDbMigration();
+
+        $questions_db_migration->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"mysqli");
+
+        $questions_db_migration->createQuestionMigration();
+
+    }
+
+    public function usersResultDbMigration(){
+
+        $users_result_db_migration = new usersResultMigration();
+
+        $users_result_db_migration->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"mysqli");
+
+        $users_result_db_migration->createUsersResultDatabase();
+
+    }
+
 }
 
 $testing_database_migration = new testingDatabaseMigration();
@@ -81,5 +106,9 @@ $testing_database_migration = new testingDatabaseMigration();
 //$testing_database_migration->resultDbMigration();
 
 //$testing_database_migration->infoDbMigration();
+
+//$testing_database_migration->questionsDbMigration();
+
+//$testing_database_migration->usersResultDbMigration();
 
 ?>
