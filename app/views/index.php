@@ -128,7 +128,9 @@ class views{
 
             <script src="./app/controllers/testAndExamController/fetchTestAndExam.controller.js"></script>
 
-            <script src="./app/controllers/testAndExamController/createTestAndExam.controller.js"></script>
+            <script src="./app/controllers/createTestAndExamController/createTestAndExam.controller.js"></script>
+
+            <script src="./app/controllers/routeTestExamIdController/routeTestExamId.controller.js"></script>
 
         </body>
     
