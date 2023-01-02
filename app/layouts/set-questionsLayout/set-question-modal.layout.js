@@ -17,10 +17,11 @@ app.directive("setQuestionModal", function(){
 
                     <div class="modal-body bg-light">
                         
-                        <form>
+                        <form ng-controller="setQuestionForm" ng-submit="setQuestion()">
 
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" rows="7" id="floatingAbout" placeholder="Question"></textarea>
+                                <textarea class="form-control" rows="7" id="floatingAbout" placeholder="Question" required 
+                                ng-model="sq.title"></textarea>
                                 <label for="floatingAbout" class="text-dark"><i class="fa fa-question-circle"></i> Question</label>
                             </div>
 
@@ -29,7 +30,8 @@ app.directive("setQuestionModal", function(){
                                 <div class="col">
 
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="option A">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="option A" required 
+                                        ng-model="sq.optionA">
                                         <label for="floatingInput">Option A</label>
                                     </div>
 
@@ -38,7 +40,8 @@ app.directive("setQuestionModal", function(){
                                 <div class="col">
 
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="option A">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="option A" required 
+                                        ng-model="sq.optionB">
                                         <label for="floatingInput">Option B</label>
                                     </div>
 
@@ -51,7 +54,8 @@ app.directive("setQuestionModal", function(){
                                 <div class="col">
 
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="option A">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="option A" required 
+                                        ng-model="sq.optionC">
                                         <label for="floatingInput">Option C</label>
                                     </div>
 
@@ -60,29 +64,34 @@ app.directive("setQuestionModal", function(){
                                 <div class="col">
 
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="option A">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="option A" reuired 
+                                        ng-model="sq.optionD">
                                         <label for="floatingInput">Option D</label>
                                     </div>
 
                                 </div>
 
+                                <div ng-controller="routeTestExamId">
+                                    <input type="hidden" value="{{testExamRefId}}" ng-model="sq.testExamId">
+                                </div>
+
                             </div>
 
                             <div class="form-floating mb-3">
-                                <select class="form-select">
+                                <select class="form-select" ng-model="sq.correctOption">
                                     <option>Correct Option</option>
-                                    <option>Option A</option>
-                                    <option>Option B</option>
-                                    <option>Option C</option>
-                                    <option>Option D</option>
+                                    <option>option a</option>
+                                    <option>option b</option>
+                                    <option>option c</option>
+                                    <option>option d</option>
                                 </select>
                             </div>
 
                             <div align="center">
 
-                                <button class="btn btn-lg btn-primary" type="submit" style="background-color:#00AAF4;">
-                                    <b>Create <i class="fa fa-plus-circle"></i></b>
-                                </button>
+                                <input style="width:300px;background-color:#00AAF4;" 
+                                type="submit" name="setQuestion" class="btn btn-lg btn-primary" 
+                                ng-disabled="setQuestion.$invalid" value="Create"/>
 
                             </div>
 

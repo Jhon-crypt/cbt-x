@@ -19,15 +19,36 @@ app.directive("create", function(){
 
                 <div class="pt-2" align="center">
 
-                    <form ng-controller="create" ng-submit="create()">
-    
+                    <form ng-controller="create" ng-submit="createTestAndExam()">
+
+                        <div ng-repeat="s in create">
+                            
+                            <div class="alert alert-success" style="width:300px" 
+                            ng-show="{{ s.successStatus }}">
+                                <p class="mb-3">{{ s.message }}</p>
+                                <a href="#!setQuestions/{{ s.ref_id }}">
+                                    <button class="btn btn-md text-light" 
+                                    style="background-color:#00AAF4;">
+                                        <small>Click Here To Set Questions <i class="fa fa-external-link"></i></small>
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div class="alert alert-warning" style="width:300px" 
+                            ng-show="{{ s.errorStatus }}">
+                                {{ s.message }}
+                            </div>
+
+                        </div>
+
                         <div class="form-floating mb-3" style="width:300px">
-                            <input ng-model="create.title" type="text" class="form-control" id="floatingInput" placeholder="Simple Test" required>
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Simple Test" required 
+                            ng-model="cr.title">
                             <label for="floatingInput"><i class="fa fa-mortar-board"></i> Test/exam name</label>
                         </div>
 
                         <div class="form-floating mb-3" style="width:300px">
-                            <select ng-model="create.type" class="form-select">
+                            <select class="form-select" ng-model="cr.type">
                                 <option>Type</option>
                                 <option>Test</option>
                                 <option>Exam</option>
@@ -35,7 +56,7 @@ app.directive("create", function(){
                         </div>
 
                         <div class="form-floating mb-3" style="width:300px">
-                            <select ng-model="create.totalQuestion" class="form-select">
+                            <select class="form-select" ng-model="cr.totalQuestion">
                                 <option>Questions</option>
                                 <option>10</option>
                                 <option>20</option>
@@ -44,20 +65,31 @@ app.directive("create", function(){
                         </div>
 
                         <div class="form-floating mb-3" style="width:300px">
-                            <input ng-model="create.dataFromUser" type="number" class="form-control" id="floatingInput" placeholder="10 minutes" required>
+                            <input type="text" class="form-control" id="floatingInput" placeholder="10 minutes" required 
+                            ng-model="cr.dataFromUser">
                             <label for="floatingInput"><i class="fa fa-exchange"></i> Info from user</label>
                         </div>
 
                         <div class="form-floating mb-3" style="width:300px">
-                            <input ng-model="create.timeLimit" type="text" class="form-control" id="floatingInput" placeholder="10 minutes" required>
+                            <input type="number" class="form-control" id="floatingInput" placeholder="10 minutes" required 
+                            ng-model="cr.timeLimit">
                             <label for="floatingInput"><i class="fa fa-clock-o"></i> Time limit</label>
                         </div>
-        
+
+                        
                         <input style="width:300px;background-color:#00AAF4;" 
                         type="submit" name="create" class="btn btn-lg btn-primary" 
                         ng-disabled="create.$invalid" value="Create"/>
-                
-                
+                        
+
+                        <!--
+                        <button class="btn btn-lg bg-light" name="create"
+                        style="width:300px;background-color:#00AAF4;" 
+                        ng-click="go()" ng-disabled="create.$invalid">
+                            Track Now
+                        </button>
+                        -->
+
                     </form>
 
                 </div>

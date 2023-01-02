@@ -38,20 +38,6 @@ app.directive("dashboard", function(){
                                         </div>
                                     </div>
 
-                                    <hr>
-
-                                    <div class="col d-flex align-items-start">
-                                        <div class="flex-shrink-0 me-3">
-                                            <h2><font color="orange"><i class="fa fa-align-left"></i></font></h2>
-                                        </div>
-                                        <div>
-                                            <h2>Description</h2>
-                                            <p style="white-space:nowrap;overflow:hidden;
-                                            text-overflow:ellipsis;width:220px;">
-                                                {{ x.descriptions }}
-                                            </p>
-                                        </div>
-                                    </div>
 
                                 </div>
                     
@@ -123,7 +109,7 @@ app.directive("dashboard", function(){
                                             <li><a class="dropdown-item" href="#!analytics">
                                                 <i class="fa fa-bar-chart"></i> {{ x.type }} analytics</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="#!setQuestions">
+                                            <li><a class="dropdown-item" href="#!setQuestions/{{ x.ref_id }}">
                                                 <i class="fa fa-list-alt"></i> Set questions</a>
                                             </li>
                                             <li><a class="dropdown-item" href="#!delete">
