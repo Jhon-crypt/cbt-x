@@ -25,8 +25,9 @@ $routeProvider
     .when("/createSuccess", {
         templateUrl : "./app/views/createView/create-success.view.html"
     })
-    .when("/setQuestions", {
-        templateUrl : "./app/views/set-questionView/set-question.view.html"
+    .when("/setQuestions/:testExamId", {
+        templateUrl : "./app/views/set-questionView/set-question.view.html",
+        controller : "routeTestExamId"
     })
     .when("/delete", {
         templateUrl : "./app/views/deleteView/delete.view.html"
@@ -48,3 +49,4 @@ $routeProvider
     })
     
 });
+
