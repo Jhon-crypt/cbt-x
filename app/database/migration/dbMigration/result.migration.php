@@ -24,7 +24,7 @@ class resultDbMigration{
 
     public function createResultDatabase(){
 
-        $statement = "CREATE DATABASE cbt_x_result";
+        $statement = "CREATE DATABASE cbt_x_test_and_exam_result";
 
         if($this->conn->query($statement) === TRUE){
 
