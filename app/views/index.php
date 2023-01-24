@@ -37,6 +37,18 @@ class views{
             <link rel="stylesheet" href="./app/assets/angular-loading-bar-master/angular-loading-bar-master/build/loading-bar.css" 
             type="text/css" media="all">
 
+        </head>
+
+        <body ng-app="app">
+
+            <main>
+
+                <heading></heading>
+
+                <ng-view></ng-view>
+
+            </main>
+
             <!-- JavaScript Bundle with Popper -->
             <script src="./app/assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -54,17 +66,6 @@ class views{
 
             <script src="./app/assets/angular-loading-bar-master/angular-loading-bar-master/build/loading-bar.min.js"></script>
 
-        </head>
-
-        <body ng-app="app">
-
-            <main>
-
-                <heading></heading>
-
-                <ng-view></ng-view>
-
-            </main>
 
             <script src="./app/modules/app.module.js"></script>
 
@@ -131,6 +132,20 @@ class views{
             <script src="./app/controllers/createTestAndExamController/createTestAndExam.controller.js"></script>
 
             <script src="./app/controllers/routeTestExamIdController/routeTestExamId.controller.js"></script>
+
+            <script src="./app/controllers/setQuestionsController/setQuestions.controller.js"></script>
+
+            <script src="./app/controllers/questionsController/fetchQuestions.controller.js"></script>
+
+            <script src="./app/controllers/routeDeleteQuestionController/routeDeleteQuestion.controller.js"></script>
+
+            <script src="./app/controllers/routeDeleteQuestionController/routeDeleteAllQuestion.controller.js"></script>
+
+            <script src="./app/layouts/deleteLayout/deleteAllQuestion.layout.js"></script>
+
+            <script src="./app/controllers/routePracticeTestExamController/routePracticeTestExam.controller.js"></script>
+
+            <script src="./app/controllers/practiceTestTimeController/practiceTestTimeController.js"></script>
 
         </body>
     

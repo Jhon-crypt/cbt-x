@@ -8,13 +8,7 @@ app.controller("questionsController",
                 title:'Which is not a front end framework',
                 optionA:'Php',optionB:'AngularJs',optionC:'React',
                 optionD:'I dont know',number:'1'
-            },
-            {
-                title:'Which is not a front end framework',
-                optionA:'Php',optionB:'AngularJs',optionC:'React',
-                optionD:'I dont know',number:'1'
-            },
-
+            }
 
         ];
 

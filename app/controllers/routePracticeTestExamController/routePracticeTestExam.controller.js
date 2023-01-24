@@ -1,4 +1,4 @@
-app.controller("routeTestExamId", function($scope, $routeParams, $http){
+app.controller("routePracticeTestExam", function($scope, $routeParams, $http){
     $scope.testExamRefId = $routeParams.testExamId
 
     $http({
@@ -9,7 +9,7 @@ app.controller("routeTestExamId", function($scope, $routeParams, $http){
         }
     }).then(function(response){
 
-        $scope.result = response.data;
+        $scope.resultt = response.data;
 
     });
 

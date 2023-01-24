@@ -16,7 +16,7 @@ app.directive("analytics", function(){
 
             <div align="center">
 
-                <div class="card bg-light" ng-repeat="x in cards" style="">
+                <div class="card bg-light" ng-repeat="x in cards" style="width:350px;">
 
                     <div class="text-light" style="background-color:#00AAF4">
 
@@ -27,13 +27,6 @@ app.directive("analytics", function(){
                             </h2>
 
                             <hr>
-
-                            <h2><i class="fa fa-align-left"></i> Description</h2>
-
-                            <p> 
-                                {{ x.about }}
-                            </p>
-                            
                         
                         </div>
 

@@ -15,7 +15,11 @@
             "App/models/loginModel",
             "App/models/testAndExamModel",
             "App/models/userModel",
-            "App/models/createTestAndExamModel"
+            "App/models/createTestAndExamModel",
+            "App/models/setQuestionsModel",
+            "App/models/fetchQuestionsModel",
+            "App/models/deleteQuestionModel",
+            "App/models/testExamTimeModel"
         ]
     }
 }

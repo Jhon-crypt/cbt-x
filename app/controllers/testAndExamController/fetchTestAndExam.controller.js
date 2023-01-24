@@ -7,5 +7,3 @@ app.controller('fetchTestAndExam', function ($scope, $http) {
     });
 
 });
-
-//

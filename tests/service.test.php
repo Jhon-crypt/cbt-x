@@ -6,7 +6,7 @@ $cr = json_decode($post_data);
 
 
 $result = array([
-    'title' => $cr->title
+    'id' => $cr->testExamId
 ]);
 
 echo json_encode($result);

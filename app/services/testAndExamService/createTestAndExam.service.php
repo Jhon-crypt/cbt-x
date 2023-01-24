@@ -202,14 +202,13 @@ class createTestAndExamService{
         if($create_test_and_exam_model->insert_into_test_exams_table_status === TRUE){
 
             $result = array([
-            'errorStatus' => FALSE,
-            'successStatus' => TRUE,
-            'message' => "$this->type Successfully Created",
-            'ref_id' => $this->test_exams_ref_id
-        ]);
+                'errorStatus' => FALSE,
+                'successStatus' => TRUE,
+                'message' => "$this->type Successfully Created",
+                'ref_id' => $this->test_exams_ref_id
+            ]);
         
             echo json_encode($result);
-            
 
         }else{
 
@@ -223,6 +222,16 @@ class createTestAndExamService{
 
         }
         
+
+    }
+
+    public function closeDbConnections(){
+
+        mysqli_close($this->user_account_connect);
+        mysqli_close($this->test_exams_connect);
+        mysqli_close($this->test_exams_result_connect);
+        mysqli_close($this->questions_connect);
+
 
     }
 
@@ -245,6 +254,8 @@ if($create_test_and_exam_service->session_status === TRUE){
         $create_test_and_exam_service->generateBackgroundData();
 
         $create_test_and_exam_service->runCreateTestAndExamModel();
+
+        $create_test_and_exam_service->closeDbConnections();
 
     }else{
 

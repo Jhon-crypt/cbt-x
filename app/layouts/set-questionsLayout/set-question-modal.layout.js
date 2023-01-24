@@ -17,7 +17,25 @@ app.directive("setQuestionModal", function(){
 
                     <div class="modal-body bg-light">
                         
-                        <form ng-controller="setQuestionForm" ng-submit="setQuestion()">
+                        <form ng-controller="setQuestionsForm" ng-submit="setQuestion()">
+
+                            <div ng-repeat="q in result">
+
+                                <div align="center">
+
+                                    <div class="alert alert-success" style="width:300px" 
+                                    ng-show="{{ q.successStatus }}">
+                                        {{ q.message }}
+                                    </div>
+
+                                    <div class="alert alert-warning" style="width:300px" 
+                                    ng-show="{{ q.errorStatus }}">
+                                        {{ q.message }}
+                                </div>
+
+                                </div>
+
+                            </div>
 
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" rows="7" id="floatingAbout" placeholder="Question" required 
@@ -72,7 +90,7 @@ app.directive("setQuestionModal", function(){
                                 </div>
 
                                 <div ng-controller="routeTestExamId">
-                                    <input type="hidden" value="{{testExamRefId}}" ng-model="sq.testExamId">
+                                    
                                 </div>
 
                             </div>
@@ -80,10 +98,10 @@ app.directive("setQuestionModal", function(){
                             <div class="form-floating mb-3">
                                 <select class="form-select" ng-model="sq.correctOption">
                                     <option>Correct Option</option>
-                                    <option>option a</option>
-                                    <option>option b</option>
-                                    <option>option c</option>
-                                    <option>option d</option>
+                                    <option>option_a</option>
+                                    <option>option_b</option>
+                                    <option>option_c</option>
+                                    <option>option_d</option>
                                 </select>
                             </div>
 
@@ -91,7 +109,7 @@ app.directive("setQuestionModal", function(){
 
                                 <input style="width:300px;background-color:#00AAF4;" 
                                 type="submit" name="setQuestion" class="btn btn-lg btn-primary" 
-                                ng-disabled="setQuestion.$invalid" value="Create"/>
+                                value="Create"/>
 
                             </div>
 

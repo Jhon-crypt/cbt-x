@@ -126,7 +126,7 @@ app.directive("dashboard", function(){
 
                                 <div align="center">
 
-                                    <a class="text-light" href="#!practice" style="text-decoration:none;">
+                                    <a class="text-light" href="#!practice/{{ x.ref_id }}" style="text-decoration:none;">
                                         <button class="btn btn-lg text-light" style="background-color:orange">
                                             Practice {{ x.type }} <i class="fa fa-external-link"></i>
                                         </button>

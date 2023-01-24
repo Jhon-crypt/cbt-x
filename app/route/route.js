@@ -25,10 +25,6 @@ $routeProvider
     .when("/createSuccess", {
         templateUrl : "./app/views/createView/create-success.view.html"
     })
-    .when("/setQuestions/:testExamId", {
-        templateUrl : "./app/views/set-questionView/set-question.view.html",
-        controller : "routeTestExamId"
-    })
     .when("/delete", {
         templateUrl : "./app/views/deleteView/delete.view.html"
     })
@@ -47,6 +43,23 @@ $routeProvider
     .when("/searchResult", {
         templateUrl : "./app/views/searchView/search-result.view.html"
     })
+    .when("/setQuestions/:testExamId", {
+        templateUrl : "./app/views/set-questionView/set-question.view.html",
+        controller : "routeTestExamId"
+    })
+    .when("/deleteQuestions/:questionId", {
+        templateUrl : "./app/views/deleteView/deleteQuestion.view.html",
+        controller : "routeDeleteQuestion"
+    })
+    .when("/deleteAllQuestions/:deleteQuery", {
+        templateUrl : "./app/views/deleteView/deleteAll.view.html",
+        controller : "routeDeleteAllQuestion"
+    })
+    .when("/practice/:testExamId", {
+        templateUrl : "./app/views/practiceView/practice.view.html",
+        controller : "routePracticeTestExam"
+    })
+    
     
 });
 

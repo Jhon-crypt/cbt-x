@@ -1,26 +1,27 @@
 <?php
 
+session_start();
+
 require("../../../vendor/autoload.php");
 
 use App\database\connection\testExamsDbConnection;
-
-use App\models\testAndExamModel\testAndExamModel;
  
+use App\models\testExamTimeModel\testExamTimeModel;
+
 //loading env variables
 $env = Dotenv\Dotenv::createImmutable('../../../');
 $env->load();
 
-class testAndExamService{
+class testExamTime{
 
     public $session_status;
 
     public $user_session;
 
+    //db connections
     public $test_exams_connect;
 
     public function fetchUserSession(){
-
-        session_start();
 
         if(isset($_SESSION['login_session'])){
 
@@ -43,20 +44,24 @@ class testAndExamService{
         $test_exams_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_test_exam","mysqli");
         $this->test_exams_connect = $test_exams_db_connection->test_exams_conn;
 
-
     }
 
-    public function runModel(){
+    public function runTestExamTimeModel(){
 
-        $test_and_exam_model = new testAndExamModel();
+        $test_exam_time_model = new testExamTimeModel();
 
-        $test_and_exam_model->fetchTestAndExamFromDb(
-            $this->test_exams_connect,$this->user_session
+        $test_exam_time_model->fetchTestExamTimeFromDb(
+            $this->test_exams_connect,
+            $_SESSION['testExamId'],
+            $_SESSION['login_session']
         );
-
-        $test_and_exam_model->cacheQuery();
         
-        $test_and_exam_model->queryResult();
+
+        /*$result = array([
+            'timeLimit' => 10
+        ]);
+
+        echo json_encode($result);*/
 
     }
 
@@ -68,19 +73,18 @@ class testAndExamService{
 
 }
 
-$test_and_exam_service = new testAndExamService();
+$test_exam_time = new testExamTime();
 
-$test_and_exam_service->fetchUserSession();
+$test_exam_time->fetchUserSession();
 
-if($test_and_exam_service->session_status === TRUE){
+if($test_exam_time->session_status === TRUE){
 
-    $test_and_exam_service->dbConnections();
+    $test_exam_time->dbConnections();
 
-    $test_and_exam_service->runModel();
+    $test_exam_time->runTestExamTimeModel();
 
-    $test_and_exam_service->closeDbConnections();
+    $test_exam_time->closeDbConnections();
 
 }
-
 
 ?>
