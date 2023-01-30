@@ -96,7 +96,8 @@ app.directive("setQuestionModal", function(){
                             </div>
 
                             <div class="form-floating mb-3">
-                                <select class="form-select" ng-model="sq.correctOption">
+                                <label for="correctOption"> Select correct option</label>
+                                <select id="correctOption" class="form-select" ng-model="sq.correctOption">
                                     <option>Correct Option</option>
                                     <option>option_a</option>
                                     <option>option_b</option>

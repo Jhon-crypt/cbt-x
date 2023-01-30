@@ -54,10 +54,9 @@ app.directive("practice", function(){
                             <i class="fa fa-clock-o"></i> Time left
                         </span>
 
-                        <div ng-controller="fetchPracticeTestTime">
-                            <div ng-repeat="t in time">
-                                <h1 class="timer" data-minutes-left={{ t.timeLimit }}></h1>
-                                
+                        <div>
+                            <div>
+                                <h1 class="timer" data-minutes-left=></h1>
                             </div>
                         </div>
 
@@ -67,128 +66,19 @@ app.directive("practice", function(){
 
                 <hr>
 
-                <div align="center">
+                <form>
 
-                </div>
+                    <question-one></question-one>
 
-                <div class="pt-4 mt-4">
+                    <question-two></question-two>
 
-                    <div ng-controller="fetchQuestions">
-                    <ul class="nav flex-column">
+                    <question-three></question-three>
+                    
+                    <question-four></question-four>
 
-                        <li class="nav-item" ng-repeat="x in quest">
+                    <question-five></question-five>
 
-                        <div ng-show="{{ x.notEmptyStatus }}">
-
-                            <a class="nav-link text-dark" style="text-decoration:none;">
-
-                                <div class="d-flex shadow p-4 mb-4 bg-light">
-
-                                    <div class="flex-grow-1 ms-3">
-
-                                        <h5><i class="fa fa-question-circle"></i> Question {{ x.id }}</h5> 
-
-                                        <hr>
-
-                                        <p class="text-muted">
-                        
-                                            {{ x.question_title }} 
-                        
-                                        </p>
-
-                                        <div class="row">
-
-                                            <div class="col">
-
-                                                <label class="text-muted" for="exampleRadio1">Option A</label><br>
-                                                <label class="form-check-label" for="exampleRadio1">{{ x.option_a }}</label>
-
-                                            </div>
-
-                                            <div class="col">
-
-                                                <label class="text-muted" for="exampleRadio1">Option B</label><br>
-                                                <label class="form-check-label" for="exampleRadio1">{{ x.option_b }}</label>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="row">
-
-                                            <div class="col">
-
-                                                <label class="text-muted" for="exampleRadio1">Option C</label><br>
-                                                <label class="form-check-label" for="exampleRadio1">{{ x.option_c }}</label>
-
-
-                                            </div>
-
-                                            <div class="col">
-
-                                                <label class="text-muted" for="exampleRadio1">Option D</label><br>
-                                                <label class="form-check-label" for="exampleRadio1">{{ x.option_d }}</label>
-
-
-                                            </div>
-
-                                        </div>
-                                        
-                                        <br>
-
-                                        <select class="form-control" name="ansForQ1">
-                                            <option>Answer</option>
-                                            <option>optionA</option>
-                                            <option>optionB</option>
-                                            <option>optionC</option>
-                                            <option>optionD</option>
-                                        </select>
-
-                                        <br>
-
-                                    </div>
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-                        </li>
-
-                    </ul>
-
-                    <div ng-repeat="x in quest">
-
-                        <div ng-show="{{ x.emptyStatus }}">
-
-                            <div class="pt-3 text-muted" align="center">
-
-                                <h1>Empty Questions <i class="fa fa-ban"></i></h1>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    </div>
-                
-
-                </div>
-                <!-- end of question -->
-
-                <div align="center">
-
-                    <a href="#!end" class="text-light" style="text-decoartion:none;">
-                        <button class="btn btn-lg text-light" style="background-color:#00AAf4">
-
-                            Submit Test
-
-                        </button>
-                    </a>
-
-                </div>
+                </form>
 
                 <script>
 
@@ -206,6 +96,10 @@ app.directive("practice", function(){
 
             </div>
             <!-- session check -->
+
+        </div>
+
+        <div ng-repeat="x in sess">
 
             <div ng-show="{{ x.sessionNotSet }}">
 

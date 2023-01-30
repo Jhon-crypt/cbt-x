@@ -152,7 +152,6 @@ app.directive("setQuestions", function(){
                         </li>
 
                     </ul>
-                    
 
                     <div ng-repeat="x in quest">
 

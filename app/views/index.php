@@ -147,6 +147,36 @@ class views{
 
             <script src="./app/controllers/practiceTestTimeController/practiceTestTimeController.js"></script>
 
+            <script src="./app/layouts/testLayout/test.layout.js"></script>
+
+
+
+
+            <script src="./app/layouts/practiceQuestionsLayout/question1.layout.js"></script>
+
+            <script src="./app/controllers/practiceQuestionsController/fetchQuestion1.controller.js"></script>
+
+
+            <script src="./app/layouts/practiceQuestionsLayout/question2.layout.js"></script>
+
+            <script src="./app/controllers/practiceQuestionsController/fetchQuestion2.controller.js"></script>
+
+
+            <script src="./app/layouts/practiceQuestionsLayout/question3.layout.js"></script>
+
+            <script src="./app/controllers/practiceQuestionsController/fetchQuestion3.controller.js"></script>
+
+
+            <script src="./app/layouts/practiceQuestionsLayout/question4.layout.js"></script>
+
+            <script src="./app/controllers/practiceQuestionsController/fetchQuestion4.controller.js"></script>
+            
+            
+            <script src="./app/layouts/practiceQuestionsLayout/question5.layout.js"></script>
+
+            <script src="./app/controllers/practiceQuestionsController/fetchQuestion5.controller.js"></script>            
+
+
         </body>
     
     </html>

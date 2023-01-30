@@ -48,7 +48,8 @@ app.directive("create", function(){
                         </div>
 
                         <div class="form-floating mb-3" style="width:300px">
-                            <select class="form-select" ng-model="cr.type">
+                            <label for="id">Select type</label>
+                            <select id="type" class="form-select" ng-model="cr.type">
                                 <option>Type</option>
                                 <option>Test</option>
                                 <option>Exam</option>
@@ -56,11 +57,12 @@ app.directive("create", function(){
                         </div>
 
                         <div class="form-floating mb-3" style="width:300px">
-                            <select class="form-select" ng-model="cr.totalQuestion">
+                            <label for="totalQuestions"> Total questions</label>
+                            <select id="totalQuestions" class="form-select" ng-model="cr.totalQuestion">
                                 <option>Questions</option>
+                                <option>5</option>
                                 <option>10</option>
                                 <option>20</option>
-                                <option>30</option>
                             </select>
                         </div>
 
