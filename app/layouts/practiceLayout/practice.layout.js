@@ -31,6 +31,7 @@ app.directive("practice", function(){
 
         </style>
         
+        
         <div class="container pt-4 mb-5" ng-controller="sessionGuard">
         <div ng-repeat="x in sess">
 
@@ -67,17 +68,11 @@ app.directive("practice", function(){
                 <hr>
 
                 <form>
-
                     <question-one></question-one>
-
                     <question-two></question-two>
-
                     <question-three></question-three>
-                    
-                    <question-four></question-four>
-
+                    <question-four></questiion-four>
                     <question-five></question-five>
-
                 </form>
 
                 <script>

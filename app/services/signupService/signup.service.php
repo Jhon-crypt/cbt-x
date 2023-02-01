@@ -44,7 +44,7 @@ class signupService{
 
     public $avatar;
 
-    public $date_ceated;
+    public $date_created;
 
     public $time_created;
 

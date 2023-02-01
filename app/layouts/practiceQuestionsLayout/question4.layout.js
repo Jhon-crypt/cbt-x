@@ -70,7 +70,7 @@ app.directive("questionFour", function(){
                                         <br>
 
                                         <label for="question">Select answer below</label>
-                                        <select id="question" class="form-control" ng-model="quest.question1Select">
+                                        <select id="question" class="form-control" name="question4">
                                             <option>Answer</option>
                                             <option>optionA</option>
                                             <option>optionB</option>
@@ -78,7 +78,7 @@ app.directive("questionFour", function(){
                                             <option>optionD</option>
                                         </select>
 
-                                        <input type="hidden" ng-model="quest.question1Ans" value="{{ x.correct_answer }}"
+                                        <input type="hidden" name="question4Ans" value="{{ x.correct_answer }}">
 
                                         <br>
 

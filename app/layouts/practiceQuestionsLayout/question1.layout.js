@@ -34,14 +34,14 @@ app.directive("questionOne", function(){
                                             <div class="col">
 
                                                 <label class="text-muted" for="exampleRadio1">Option A</label><br>
-                                                <label class="form-check-label" for="exampleRadio1">{{ x.option_a }}</label>
+                                                <span id="exampleRadio1">{{ x.option_a }}</span>
 
                                             </div>
 
                                             <div class="col">
 
                                                 <label class="text-muted" for="exampleRadio1">Option B</label><br>
-                                                <label class="form-check-label" for="exampleRadio1">{{ x.option_b }}</label>
+                                                <span id="exampleRadio1">{{ x.option_b }}</span>
 
                                             </div>
 
@@ -52,7 +52,7 @@ app.directive("questionOne", function(){
                                             <div class="col">
 
                                                 <label class="text-muted" for="exampleRadio1">Option C</label><br>
-                                                <label class="form-check-label" for="exampleRadio1">{{ x.option_c }}</label>
+                                                <span id="exampleRadio1">{{ x.option_c }}</span>
 
 
                                             </div>
@@ -60,7 +60,7 @@ app.directive("questionOne", function(){
                                             <div class="col">
 
                                                 <label class="text-muted" for="exampleRadio1">Option D</label><br>
-                                                <label class="form-check-label" for="exampleRadio1">{{ x.option_d }}</label>
+                                                <span id="exampleRadio1">{{ x.option_d }}</span>
 
 
                                             </div>
@@ -69,16 +69,26 @@ app.directive("questionOne", function(){
                                         
                                         <br>
 
-                                        <label for="question1">Select answer below</label>
-                                        <select id="question1" class="form-control" ng-model="quest.question1Select">
-                                            <option>Answer</option>
-                                            <option>optionA</option>
-                                            <option>optionB</option>
-                                            <option>optionC</option>
-                                            <option>optionD</option>
-                                        </select>
+                                            <label for="question1">Select answer below</label>
+                                            <select id="question1" class="form-control" name="question1">
+                                                <option>Answer</option>
+                                                <option>optionA</option>
+                                                <option>optionB</option>
+                                                <option>optionC</option>
+                                                <option>optionD</option>
+                                            </select>
 
-                                        <input type="hidden" ng-model="quest.question1Ans" value="{{ x.correct_answer }}"
+                                            <div align="center" class="mt-3">
+
+                                                <input style="width:300px;background-color:#00AAF4;" 
+                                                type="submit" name="sub" class="btn btn-lg btn-primary" 
+                                                value="Submit"/>
+
+                                            </div>
+
+                                            <!--
+                                            <input type="hidden" name="question1Ans" value="{{ x.correct_answer }}">
+                                            -->
 
                                         <br>
 

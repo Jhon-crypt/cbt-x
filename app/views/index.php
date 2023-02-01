@@ -177,6 +177,11 @@ class views{
             <script src="./app/controllers/practiceQuestionsController/fetchQuestion5.controller.js"></script>            
 
 
+            <script src="./app/controllers/submitQuestionController/submitQuestion.controller.js"></script>            
+
+            <script src="./app/layouts/practiceLayout/infoFromUser.layout.js"></script>            
+
+
         </body>
     
     </html>
