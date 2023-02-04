@@ -23,15 +23,15 @@ app.directive("infoFromUser", function(){
 
                 <form ng-controller="userInfo" ng-submit="submitUserInfo()">
 
-                        <div class="form-floating mb-3" style="width:300px">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Simple Test" required 
-                            ng-model="userInfo">
-                            <label for="floatingInput"><i class="fa fa-user-circle-o"></i> Type info here</label>
-                        </div>
+                    <div class="form-floating mb-3" style="width:300px">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Simple Test" required 
+                        ng-model="userInfo">
+                        <label for="floatingInput"><i class="fa fa-user-circle-o"></i> Type info here</label>
+                    </div>
 
-                        <input style="width:300px;background-color:#00AAF4;" 
-                        type="submit" name="create" class="btn btn-lg btn-primary" 
-                        ng-disabled="userInfo.$invalid" value="Next"/>   
+                    <input style="width:300px;background-color:#00AAF4;" 
+                    type="submit" name="create" class="btn btn-lg btn-primary" 
+                    ng-disabled="userInfo.$invalid" value="Next"/>   
 
                 </form>
 
