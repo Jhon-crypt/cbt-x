@@ -71,7 +71,7 @@ app.directive("practice", function(){
                     <question-one></question-one>
                     <question-two></question-two>
                     <question-three></question-three>
-                    <question-four></questiion-four>
+                    <question-four></question-four>
                     <question-five></question-five>
                 </form>
 

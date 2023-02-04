@@ -30,8 +30,21 @@ app.directive("infoFromUser", function(){
                     </div>
 
                     <input style="width:300px;background-color:#00AAF4;" 
-                    type="submit" name="create" class="btn btn-lg btn-primary" 
-                    ng-disabled="userInfo.$invalid" value="Next"/>   
+                    type="submit" name="create" class="btn btn-lg btn-primary mb-3" 
+                    ng-disabled="userInfo.$invalid" value="Next"/> 
+                    
+                    <div ng-repeat="s in success">
+                        <p>{{ s.user_info }}
+
+                        <div class="alert alert-success" style="width:300px" 
+                        ng-show="{{ s.status }}">
+                            <p class="lead">
+                                Click <a href="#!practice/{{ s.test_id }}">Here</a> To {{ s.message }}
+                            </p>
+                        
+                        </div>
+
+                    </div>
 
                 </form>
 

@@ -78,17 +78,7 @@ app.directive("questionOne", function(){
                                                 <option>optionD</option>
                                             </select>
 
-                                            <div align="center" class="mt-3">
-
-                                                <input style="width:300px;background-color:#00AAF4;" 
-                                                type="submit" name="sub" class="btn btn-lg btn-primary" 
-                                                value="Submit"/>
-
-                                            </div>
-
-                                            <!--
                                             <input type="hidden" name="question1Ans" value="{{ x.correct_answer }}">
-                                            -->
 
                                         <br>
 

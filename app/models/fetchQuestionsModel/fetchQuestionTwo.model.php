@@ -18,7 +18,7 @@ class fetchQuestionTwoModel{
 
     public function fetchQuestionsFromDb($connection,$ref_id){
 
-        $statement = "SELECT * FROM questions_of_".$ref_id." WHERE id='2'";
+        $statement = "SELECT * FROM questions_of_".$ref_id." WHERE id=2";
 
         $this->statement_result = $connection->query($statement);
 
@@ -82,7 +82,7 @@ class fetchQuestionTwoModel{
                 'option_b' => $statement_row['option_b'],
                 'option_c' => $statement_row['option_c'],
                 'option_d' => $statement_row['option_d'],
-                'correct_answer' => $statement_row['correct_answer']
+                'correct_answer' => base64_encode($statement_row['correct_answer'])
 
             ]);
 
