@@ -181,6 +181,10 @@ class views{
 
             <script src="./app/layouts/practiceLayout/infoFromUser.layout.js"></script>            
 
+            <script src="./app/controllers/routeInfoFromUserController/routeInfoFromUser.controller.js"></script>            
+
+            <script src="./app/controllers/fetchInfoFromUserController/fetchInfoFromUser.controller.js"></script>            
+
 
         </body>
     

@@ -19,6 +19,7 @@ class signupModel{
             author text,
             date_created text,
             time_created text,
+            infoFromUser text,
             PRIMARY KEY(id)
         )";
 

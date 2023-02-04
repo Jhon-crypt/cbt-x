@@ -196,7 +196,8 @@ class createTestAndExamService{
             $this->test_exams_connect->real_escape_string($this->test_exams_ref_id),
             $this->test_exams_connect->real_escape_string($this->author),
             $this->test_exams_connect->real_escape_string($this->date_created),
-            $this->test_exams_connect->real_escape_string($this->time_created)
+            $this->test_exams_connect->real_escape_string($this->time_created),
+            $this->test_exams_connect->real_escape_string($this->data_from_user)
         );
 
         if($create_test_and_exam_model->insert_into_test_exams_table_status === TRUE){

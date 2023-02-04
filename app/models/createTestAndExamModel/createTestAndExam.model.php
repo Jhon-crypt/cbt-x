@@ -63,7 +63,7 @@ class createTestAndExamModel{
 
     public function insertIntoTestExamsTable(
         $connection,$ref_id,$title,$type,$total_questions,$time_limit,
-        $status,$test_exams_ref_id,$author,$date_created,$time_created
+        $status,$test_exams_ref_id,$author,$date_created,$time_created,$info_from_user
     ){
 
         if($this->create_result_table_status === TRUE){
@@ -71,7 +71,7 @@ class createTestAndExamModel{
             $statement = $connection->prepare(" INSERT INTO testExams_of_user_".$ref_id." 
             (
                 title,type,total_questions,time_limit,status,ref_id,author,
-                date_created,time_created
+                date_created,time_created,infoFromUser
             )
             VALUES (?,?,?,?,?,?,?,?,?)
             ");
@@ -79,7 +79,7 @@ class createTestAndExamModel{
             $statement->bind_param(
                 "sssssssss",$title,$type,$total_questions,$time_limit,
                 $status,$test_exams_ref_id,$author,$date_created,
-                $time_created
+                $time_created,$info_from_user
             );
 
             if($statement->execute()){

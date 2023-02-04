@@ -59,10 +59,10 @@ $routeProvider
         templateUrl : "./app/views/practiceView/practice.view.html",
         controller : "routePracticeTestExam"
     })
-    .when("/userInfo", {
-        templateUrl : "./app/views/practiceView/infoFromUser.view.html"
+    .when("/userInfo/:testExamId", {
+        templateUrl : "./app/views/practiceView/infoFromUser.view.html",
+        controller : "routeInfoFromUser"
     })
-    
     
 });
 
