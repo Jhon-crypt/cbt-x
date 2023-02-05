@@ -44,6 +44,7 @@ class createTestAndExamModel{
             id int NOT NULL AUTO_INCREMENT,
             info_from_user text,
             score int,
+            ref_id text
             PRIMARY KEY(id)
             )";
 

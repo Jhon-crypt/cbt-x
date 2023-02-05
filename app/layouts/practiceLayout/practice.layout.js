@@ -67,12 +67,18 @@ app.directive("practice", function(){
 
                 <hr>
 
-                <form>
+                <form action="app/services/submitQuestionService/submitQuestion.service.php" method="POST">
                     <question-one></question-one>
                     <question-two></question-two>
                     <question-three></question-three>
                     <question-four></question-four>
                     <question-five></question-five>
+
+                    <div align="center">
+                        <button type="submit" class="btn btn-lg btn-primary mb-3"> 
+                            Submit
+                        </button>
+                    </div>
                 </form>
 
                 <script>

@@ -19,7 +19,10 @@
             "App/models/deleteQuestionModel",
             "App/models/testExamTimeModel",
             "App/models/fetchInfoFromUserModel",
-            "App/models/submitUserInfoModel"
+            "App/models/submitUserInfoModel",
+            "App/models/submitQuestionModel",
+            "App/models/userResultModel",
+            "App/models/fetchUserResultModel"
         ]
     }
 }

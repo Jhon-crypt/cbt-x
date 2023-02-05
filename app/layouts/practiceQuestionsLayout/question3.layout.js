@@ -72,10 +72,10 @@ app.directive("questionThree", function(){
                                         <label for="question">Select answer below</label>
                                         <select id="question" class="form-control" name="question3">
                                             <option>Answer</option>
-                                            <option>optionA</option>
-                                            <option>optionB</option>
-                                            <option>optionC</option>
-                                            <option>optionD</option>
+                                            <option>option_a</option>
+                                            <option>option_b</option>
+                                            <option>option_c</option>
+                                            <option>option_d</option>
                                         </select>
 
                                         <input type="hidden" name="question3Ans" value="{{ z.correct_answer }}">

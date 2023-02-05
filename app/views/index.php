@@ -187,6 +187,7 @@ class views{
 
             <script src="./app/controllers/submitUserInfoController/submitUserInfo.controller.js"></script>            
 
+            <script src="./app/controllers/fetchUserResultController/fetchResult.controller.js"></script>            
 
         </body>
     

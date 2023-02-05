@@ -9,11 +9,16 @@ app.directive("end", function(){
             <div class="card" style="width:250px;">
 
                 <div class="card-body">
+                <div ng-controller="fetchResult">
 
                     <h3 class="text-success">Test Ended <i class="fa fa-check-circle"></i></h3>
 
-                    <p class="lead">Your score is 12</p>
-
+                    <div ng-repeat="x in userResult">
+                        <p class="lead">
+                            Your score is {{ x.score }}
+                        </p>
+                    </div>
+                    
                     <a href="#!dashboard" style="text-decoration:none;">
                         <button class="btn btn-lg text-light" style="background-color:#00AAF4">
 
@@ -22,6 +27,7 @@ app.directive("end", function(){
                         </button>
                     </a>
 
+                </div>
                 </div>
 
             </div>

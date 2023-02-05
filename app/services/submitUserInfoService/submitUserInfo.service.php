@@ -6,6 +6,8 @@ require("../../../vendor/autoload.php");
 
 use App\database\connection\userResultDbConnection;
 
+use App\database\connection\testAndExamsResultDbConnection;
+
 use App\models\submitUserInfoModel\submitUserInfoModel;
 
 //loading env variables
@@ -17,6 +19,8 @@ class submitUserInfo{
     //db connections
     public $user_result_connect;
 
+    public $test_exams_result_connect;
+
     public $user_info;
 
     public $user_info_data_status;
@@ -24,9 +28,7 @@ class submitUserInfo{
 
     public $user_practice_session;
 
-    public $question_id;
-
-    public $question_status;
+    public $score;
 
     public function fetchUserInfoData(){
 
@@ -67,6 +69,11 @@ class submitUserInfo{
         $user_result_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_users_result","mysqli");
         $this->user_result_connect = $user_result_db_connection->user_result_conn;
     
+        //test and exams result db connection
+        $test_and_exam_result_db_connection = new testAndExamsResultDbConnection();
+        $test_and_exam_result_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_test_and_exam_result","mysqli");
+        $this->test_exams_result_connect = $test_and_exam_result_db_connection->test_and_exams_result_conn;
+
     }
 
     public function generateBackgroundData(){
@@ -75,9 +82,7 @@ class submitUserInfo{
 
         $this->user_practice_session = $_SESSION['user_test_session'];
 
-        $this->question_id = "empty";
-
-        $this->question_status = "empty";
+        $this->score = 0;
 
     }
 
@@ -91,16 +96,15 @@ class submitUserInfo{
             $_SESSION['testExamId']
         );
 
-        $submit_user_info_model->insertIntoUserResultTable(
-            $this->user_result_connect,
-            $this->user_practice_session,
+        $submit_user_info_model->insertIntoTestResultTable(
+            $this->test_exams_result_connect,
             $_SESSION['testExamId'],
-            $this->question_id,
-            $this->question_status,
-            $this->user_info
+            $this->user_info,
+            $this->score,
+            $this->user_practice_session
         );
 
-        if($submit_user_info_model->insert_into_user_result_table_status  === TRUE ){
+        if($submit_user_info_model->insert_into_test_result_table_status  === TRUE ){
 
             $result = array([
                 'status' => TRUE,
