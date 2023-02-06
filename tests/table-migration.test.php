@@ -10,6 +10,8 @@ use App\database\migration\tableMigration\userAccountTableMigration;
 
 use App\database\migration\tableMigration\resetPasswordTableMigration;
 
+use App\database\migration\tableMigration\testDbTableMigration;
+
 class testingTableMigration{
 
     public function testUserAccountTableMigration(){
@@ -32,12 +34,18 @@ class testingTableMigration{
 
     }
 
+    public function testDbTableMigration(){
+
+        $test_db_table_migration = new testDbTableMigration();
+
+    }
+
 }
 
 $testing_table_migration = new testingTableMigration();
 
 //$testing_table_migration->testUserAccountTableMigration();
 
-$testing_table_migration->testResetPasswordTabkeMigration();
+//$testing_table_migration->testResetPasswordTabkeMigration();
 
 ?>

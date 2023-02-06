@@ -46,6 +46,12 @@ app.directive("dashboard", function(){
 
                             <div class="card-body">
 
+                                <div class="alert alert-info">
+
+                                    Copy the test id <font color="blue">({{ x.ref_id }})</font> and share for people to participate
+
+                                </div>
+
                                 <div class="clearfix">
 
                                     <span class="float-start">

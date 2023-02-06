@@ -7,12 +7,13 @@ app.directive("search", function(){
         
         <div class="container pt-5 mt-5" align="center">
 
-            <form>
+            <form ng-controller="searchController" ng-submit="searchTest()">
                 <h3><font color="#00AAF4"><i class="fa fa-check-square-o"></i> CBT</font>-<font color="orange">X</font></h3>
                 <h2 class="h3 mb-3 fw-normal">Search Test/Exam</h2>
     
                 <div class="form-floating mb-3" style="width:300px">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" 
+                    ng-model="search" required>
                     <label for="floatingInput"><i class="fa fa-check-square"></i> Enter test/exam code</label>
                 </div>
         
