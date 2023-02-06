@@ -38,6 +38,10 @@ class testingTableMigration{
 
         $test_db_table_migration = new testDbTableMigration();
 
+        $test_db_table_migration->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_test_exam","mysqli");
+
+        $test_db_table_migration->createTestTable()();
+
     }
 
 }
@@ -47,5 +51,7 @@ $testing_table_migration = new testingTableMigration();
 //$testing_table_migration->testUserAccountTableMigration();
 
 //$testing_table_migration->testResetPasswordTabkeMigration();
+
+$testing_table_migration->testDbTableMigration();
 
 ?>
