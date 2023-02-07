@@ -52,9 +52,7 @@ class fetchInfoFromUserService{
 
         $fetch_info_from_user->fetchInfoFromUserInDb(
             $this->test_exams_connect,
-            $this->user_session,
-            $_SESSION['testExamId'],
-
+            $_SESSION['testExamId']
         );
 
         $fetch_info_from_user->cacheQuery();

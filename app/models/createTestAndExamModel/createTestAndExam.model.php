@@ -44,7 +44,7 @@ class createTestAndExamModel{
             id int NOT NULL AUTO_INCREMENT,
             info_from_user text,
             score int,
-            ref_id text
+            ref_id text,
             PRIMARY KEY(id)
             )";
 
@@ -63,23 +63,24 @@ class createTestAndExamModel{
     }
 
     public function insertIntoTestExamsTable(
-        $connection,$ref_id,$title,$type,$total_questions,$time_limit,
-        $status,$test_exams_ref_id,$author,$date_created,$time_created,$info_from_user
+        $connection,$title,$type,$total_questions,$time_limit,
+        $status,$test_exams_ref_id,$author,$author_id,$date_created,
+        $time_created,$info_from_user
     ){
 
         if($this->create_result_table_status === TRUE){
 
-            $statement = $connection->prepare(" INSERT INTO testExams_of_user_".$ref_id." 
+            $statement = $connection->prepare(" INSERT INTO testexams 
             (
                 title,type,total_questions,time_limit,status,ref_id,author,
-                date_created,time_created,infoFromUser
+                author_id,date_created,time_created,infoFromUser
             )
-            VALUES (?,?,?,?,?,?,?,?,?)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?)
             ");
 
             $statement->bind_param(
-                "sssssssss",$title,$type,$total_questions,$time_limit,
-                $status,$test_exams_ref_id,$author,$date_created,
+                "sssssssssss",$title,$type,$total_questions,$time_limit,
+                $status,$test_exams_ref_id,$author,$author_id,$date_created,
                 $time_created,$info_from_user
             );
 

@@ -35,6 +35,7 @@ class testDbTableMigration{
             status text,
             ref_id text,
             author text,
+            author_id text,
             date_created text,
             time_created text,
             infoFromUser text,

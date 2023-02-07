@@ -40,7 +40,7 @@ class testingTableMigration{
 
         $test_db_table_migration->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_test_exam","mysqli");
 
-        $test_db_table_migration->createTestTable()();
+        $test_db_table_migration->createTestTable();
 
     }
 

@@ -22,7 +22,8 @@
             "App/models/submitUserInfoModel",
             "App/models/submitQuestionModel",
             "App/models/userResultModel",
-            "App/models/fetchUserResultModel"
+            "App/models/fetchUserResultModel",
+            "App/models/searchResultModel"
         ]
     }
 }

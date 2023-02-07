@@ -167,8 +167,6 @@ class signupService{
 
         $signup_model = new signupModel();
 
-        $signup_model->createUserTestExamTable($this->test_exams_connect,$this->ref_id);
-
         $signup_model->userResetPassword($this->reset_password_connect,$this->ref_id,$this->reset_password_code);
 
         $signup_model->userData(

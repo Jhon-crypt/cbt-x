@@ -14,10 +14,9 @@ class fetchInfoFromUserModel{
 
     public $cached_query_result;
 
-    public function fetchInfoFromUserInDb($connection,$ref_id,$test_id){
+    public function fetchInfoFromUserInDb($connection,$test_id){
 
-        $statement = "SELECT infoFromUser FROM testExams_of_user_".$ref_id." 
-        WHERE ref_id = '$test_id'";
+        $statement = "SELECT infoFromUser FROM testexams WHERE ref_id = '$test_id'";
 
         $this->statement_result = $connection->query($statement);
 

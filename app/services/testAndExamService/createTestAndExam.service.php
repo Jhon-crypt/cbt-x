@@ -110,6 +110,35 @@ class createTestAndExamService{
 
         }
 
+        /*if(
+            isset($_POST['title']) && $_POST['title'] !== "" && 
+            isset($_POST['type']) && $_POST['type'] !== "" && 
+            isset($_POST['totalQuestion']) && $_POST['totalQuestion'] !== "" && 
+            isset($_POST['dataFromUser']) && $_POST['dataFromUser'] !== "" && 
+            isset($_POST['timeLimit']) && $_POST['timeLimit'] !== ""
+        ){
+
+            $this->title = strip_tags($_POST['title']);
+
+            $this->type = strip_tags($_POST['type']);
+
+            $this->total_question = strip_tags($_POST['totalQuestion']);
+
+            $this->data_from_user = strip_tags($_POST['dataFromUser']);
+
+            $this->time_limit = strip_tags($_POST['timeLimit']);
+
+
+            $this->create_test_and_exam_data_status = TRUE;
+
+        }else{
+
+            $this->create_test_and_exam_data_status = FALSE;
+
+        }*/
+
+
+
     }
 
     public function dbConnections(){
@@ -187,7 +216,6 @@ class createTestAndExamService{
 
         $create_test_and_exam_model->insertIntoTestExamsTable(
             $this->test_exams_connect,
-            $this->user_session,
             $this->test_exams_connect->real_escape_string($this->title),
             $this->test_exams_connect->real_escape_string($this->type),
             $this->test_exams_connect->real_escape_string($this->total_question),
@@ -195,6 +223,7 @@ class createTestAndExamService{
             $this->test_exams_connect->real_escape_string($this->status),
             $this->test_exams_connect->real_escape_string($this->test_exams_ref_id),
             $this->test_exams_connect->real_escape_string($this->author),
+            $this->test_exams_connect->real_escape_string($this->user_session),
             $this->test_exams_connect->real_escape_string($this->date_created),
             $this->test_exams_connect->real_escape_string($this->time_created),
             $this->test_exams_connect->real_escape_string($this->data_from_user)

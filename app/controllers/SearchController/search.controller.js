@@ -4,13 +4,13 @@ app.controller('searchController', function ($scope, $http) {
 
         $http({ 
             method : 'post',
-            url : "",
+            url : "./app/services/testAndExamService/fetchTestAndExam.service.php",
             data : {
-                searchTest : $scope.searchTest
+                searchValue : $scope.search
             }
         }).then(function(response){
 
-            $scope.success = response.data;
+        $scope.success = response.data;
             //window.location.href = "#!success"
 
         });
