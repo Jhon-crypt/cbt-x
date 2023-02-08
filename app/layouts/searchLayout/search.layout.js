@@ -16,11 +16,17 @@ app.directive("search", function(){
                     ng-model="search" required>
                     <label for="floatingInput"><i class="fa fa-check-square"></i> Enter test/exam code</label>
                 </div>
-        
+    
                 <input style="width:300px;background-color:#00AAF4;" 
                 type="submit" name="create" class="btn btn-lg btn-primary mb-3" 
                 ng-disabled="searchController.$invalid" value="Search"/>
-                       
+                   
+                <!--
+                <div ng-repeat="x in success">
+                    <p>{{ x.search }}</p>
+                </div>
+                -->
+
                 <div class="col mb-3" ng-repeat="x in success">
 
                         <div class="card bg-light" style="width:300px;">
@@ -132,14 +138,6 @@ app.directive("search", function(){
                                 </p>
 
                                 <div align="center">
-
-                                    <!--
-                                    <a class="text-light" href="#!practice/{{ x.ref_id }}" style="text-decoration:none;">
-                                        <button class="btn btn-lg text-light" style="background-color:orange">
-                                            Practice {{ x.type }} <i class="fa fa-external-link"></i>
-                                        </button>
-                                    </a>
-                                    -->
 
                                     <a class="text-light" href="#!userInfo/{{ x.ref_id }}" style="text-decoration:none;">
                                         <button class="btn btn-lg text-light" style="background-color:orange">

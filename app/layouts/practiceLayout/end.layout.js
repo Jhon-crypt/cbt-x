@@ -17,15 +17,16 @@ app.directive("end", function(){
                         <p class="lead">
                             Your score is {{ x.score }}
                         </p>
-                    </div>
                     
-                    <a href="#!dashboard" style="text-decoration:none;">
-                        <button class="btn btn-lg text-light" style="background-color:#00AAF4">
+                        <a class="text-light" href="#!userInfo/{{ x.test_id }}" style="text-decoration:none;">
+                            <button class="btn btn-lg text-light" style="background-color:#00AAF4">
 
-                        Retake Test <i class="fa fa-check-square-o"></i>
+                                Retake Test <i class="fa fa-check-square-o"></i>
 
-                        </button>
-                    </a>
+                            </button>
+                        </a>
+
+                    </div>
 
                 </div>
                 </div>

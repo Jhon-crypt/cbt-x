@@ -32,11 +32,30 @@ class searchTest{
 
             $this->search_value_status = TRUE;
 
+            $result = array([
+                'search' => $data->searchValue
+            ]);
+
+            echo json_encode($result);
+
         }else{
 
             $this->search_value_status = FALSE;
 
         }
+
+        //uncomment when testing this service with postman
+        /*if(isset($_POST['searchValue']) && $_GET['searchValue'] !== "" ){
+
+            $this->search_value = strip_tags($_POST['searchValue']);
+
+            $this->search_value_status = TRUE;
+
+        }else{
+
+            $this->search_value_status = FALSE;
+
+        }*/
 
     }
 
@@ -47,7 +66,6 @@ class searchTest{
         $test_exams_db_connection->connection($_SERVER['server_name'],$_SERVER['username'],$_ENV['password'],"cbt_x_test_exam","mysqli");
         $this->test_exams_connect = $test_exams_db_connection->test_exams_conn;
 
-
     }
 
     public function runSearchTestModel(){
@@ -56,7 +74,7 @@ class searchTest{
 
         $search_test_result_model->fetchTestExamQuery(
             $this->test_exams_connect,
-            $this->test_exams_connect->real_escape_string( $this->search_value)
+            $this->test_exams_connect->real_escape_string($this->search_value)
         );
 
         $search_test_result_model->cacheQuery();
@@ -71,7 +89,7 @@ $search_test = new searchTest();
 
 $search_test->fetchUserSearchValue();
 
-if($search_test->$this->search_value_status === TRUE){
+if($search_test->search_value_status === TRUE){
 
     $search_test->dbConnections();
 

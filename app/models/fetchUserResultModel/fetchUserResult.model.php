@@ -74,6 +74,7 @@ class fetchUserResultModel{
 
     public function queryResult(){
 
+
         if($this->statement_status === TRUE){
 
             $statement_row = $this->cached_query_result->fetch_assoc();
@@ -82,7 +83,7 @@ class fetchUserResultModel{
             
             $result = array([
                 'score' => $statement_row['score'],
-            
+                'test_id' => $_SESSION['testExamId']
             ]);
             
             echo json_encode($result);
