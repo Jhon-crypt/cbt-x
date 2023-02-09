@@ -23,7 +23,7 @@ app.directive("profileModal", function(){
 
                         <div align="center">
 
-                            <h3>@Oladele_John</h3>
+                            <h3>@Oladele_Joh</h3>
 
                             <p class="text-muted"><i class="fa fa-envelope"></i> johnoladele690@gmail.com</p> 
 

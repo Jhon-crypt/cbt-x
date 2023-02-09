@@ -4,58 +4,82 @@ app.directive("more", function(){
 
         template : `
         
-        <div class="container pt-4 mb-5">
+        <div class="container pt-4 mb-5" ng-controller="sessionGuard">
+        <div ng-repeat="x in sess">
 
-            <h1>More <i class="fa fa-align-left"></i></h1>
+            <div ng-show="{{ x.sessionSet }}">
 
-            <span class="text-muted">
-               <i class="fa fa-info-circle"></i> More stuffs that could not contain the navigation
-            </span>
+                <h1>More <i class="fa fa-align-left"></i></h1>
 
-            <hr>
+                <span class="text-muted">
+                    <i class="fa fa-info-circle"></i> More stuffs that could not contain the navigation
+                </span>
 
-            <ul class="list-group list-group-flush">
+                <hr>
 
-                <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#profileModal">
+                <ul class="list-group list-group-flush">
 
-                    <i class="fa fa-user-circle-o"></i> Profile
+                    <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#profileModal">
 
-                </li>
+                        <i class="fa fa-user-circle-o"></i> Profile
 
-                <li class="list-group-item">
+                    </li>
 
-                    <i class="fa fa-question-circle"></i> Help me
+                    <li class="list-group-item">
 
-                </li>
+                        <i class="fa fa-question-circle"></i> Help me
 
-                <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#settingsModal">
+                    </li>
 
-                    <i class="fa fa-cogs"></i> Settings
+                    <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#settingsModal">
 
-                </li>
+                        <i class="fa fa-cogs"></i> Settings
 
-                <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#socialsModal">
+                    </li>
 
-                    <i class="fa fa-comments-o"></i> Contact and Socials
+                    <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#socialsModal">
 
-                </li>
+                        <i class="fa fa-comments-o"></i> Contact and Socials
 
-                <li class="list-group-item">
+                    </li>
 
-                    <i class="fa fa-legal"></i> Terms and Conditions
+                    <li class="list-group-item">
 
-                </li>
+                        <i class="fa fa-legal"></i> Terms and Conditions
 
-                <li class="list-group-item">
+                    </li>
 
-                    <a class="text-danger" href="#!logout" style="text-decoration:none;">
-                        <i class="fa fa-sign-out"></i> Logout, come back soon
+                    <li class="list-group-item">
+
+                        <a class="text-danger" href="#!logout" style="text-decoration:none;">
+                            <i class="fa fa-sign-out"></i> Logout, come back soon
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div ng-show="{{ x.sessionNotSet }}">
+
+                <div class="pt-5 mt-5" align="center">
+
+                    <h1>You Have Been<br> Logged Out <i class="fa fa-sign-out"></i></h1>
+
+                    <a href="#!login" style="text-decoration:none;">
+                        <button class="btn btn-lg text-light" style="background-color:#00AAF4">
+
+                            Login Again <i class="fa fa-sign-in"></i>
+
+                        </button>
                     </a>
 
-                </li>
+                </div>
 
-            </ul>
+            </div>
 
+        </div>
         </div>
 
         <div class="text-center pt-5 text-muted">
