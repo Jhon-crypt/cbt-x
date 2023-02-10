@@ -1,12 +1,12 @@
 <?php
 
-namespace App\models\searchResultModel;
+namespace App\models\usersProfileModel;
 
 use Phpfastcache\CacheManager;
 
 use Phpfastcache\Config\ConfigurationOption;
 
-class searchResultModel{
+class usersProfileModel{
 
     public $statement_result;
 
@@ -14,11 +14,9 @@ class searchResultModel{
 
     public $cached_query_result;
 
-    public function fetchTestExamQuery($connection,$ref_id){
+    public function fetchUsersProfile($connection,$ref_id){
 
-        $statement = "SELECT title,type,total_questions,descriptions,
-        time_limit,status,ref_id,author,date_created,time_created
-        FROM testexams WHERE ref_id = '$ref_id'";
+        $statement = "SELECT * FROM user_account WHERE ref_id = '$ref_id'";
 
         $this->statement_result = $connection->query($statement);
 
@@ -44,7 +42,7 @@ class searchResultModel{
             
             $InstanceCache = CacheManager::getInstance('files');
     
-            $key = "search_test_query_cache";
+            $key = "fetch_users_profile_query_cache";
             $cache_query = $InstanceCache->getItem($key);
     
             if (!$cache_query->isHit()) {
@@ -76,17 +74,8 @@ class searchResultModel{
             $statement_row = $this->cached_query_result->fetch_assoc();
 
             $result = array([
-                'title' => $statement_row['title'],
-                'type' => $statement_row['type'],
-                'total_questions' => $statement_row['total_questions'],
-                'descriptions' => $statement_row['descriptions'],
-                'time_limit' => $statement_row['time_limit'],
-                'status' => $statement_row['status'],
-                'ref_id' => $statement_row['ref_id'],
-                'author' => $statement_row['author'],
-                'date_created' => $statement_row['date_created'],
-                'time_created' => $statement_row['time_created']
-            
+                'username' => $statement_row['username'],
+                'email' => $statement_row['email']
             ]);
             
             echo json_encode($result);

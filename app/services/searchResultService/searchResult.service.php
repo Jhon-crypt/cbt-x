@@ -32,11 +32,6 @@ class searchTest{
 
             $this->search_value_status = TRUE;
 
-            $result = array([
-                'search' => $data->searchValue
-            ]);
-
-            echo json_encode($result);
 
         }else{
 

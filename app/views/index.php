@@ -190,6 +190,10 @@ class views{
             <script src="./app/controllers/fetchUserResultController/fetchResult.controller.js"></script>            
 
             <script src="./app/controllers/SearchController/search.controller.js"></script>            
+
+            <script src="./app/controllers/usersProfileController/usersProfile.controller.js"></script>            
+
+
         </body>
     
     </html>

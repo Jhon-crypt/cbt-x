@@ -4,7 +4,7 @@ app.controller('searchController', function ($scope, $http) {
 
         $http({ 
             method : 'post',
-            url : "./app/services/testAndExamService/fetchTestAndExam.service.php",
+            url : "./app/services/searchResultService/searchResult.service.php",
             data : {
                 searchValue : $scope.search
             }

@@ -23,9 +23,17 @@ app.directive("profileModal", function(){
 
                         <div align="center">
 
-                            <h3>@Oladele_Joh</h3>
+                            <div ng-controller="userProfile">
 
-                            <p class="text-muted"><i class="fa fa-envelope"></i> johnoladele690@gmail.com</p> 
+                                <div ng-repeat="x in result">
+
+                                    <h3>{{ x.username }}</h3>
+
+                                    <p class="text-muted"><i class="fa fa-envelope"></i> {{ x.email }}</p> 
+
+                                </div>
+
+                            </div>
 
                         </div>
 

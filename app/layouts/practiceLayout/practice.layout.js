@@ -57,7 +57,7 @@ app.directive("practice", function(){
 
                         <div>
                             <div>
-                                <h1 class="timer" data-minutes-left=></h1>
+                                <h1 class="timer" data-minutes-left=2></h1>
                             </div>
                         </div>
 
