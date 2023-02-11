@@ -16,6 +16,12 @@ app.directive("settingsModal", function(){
                 </div>
 
                 <div class="modal-body bg-light">
+
+                    <div align="center">
+                        <div class="alert alert-info w-50">
+                            Still working on it!
+                        </div>
+                    </div>
                     
                     <div class="accordion-item">
                         <h4 class="accordion-header" id="headingTwo">

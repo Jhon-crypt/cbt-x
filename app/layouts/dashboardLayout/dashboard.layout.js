@@ -112,7 +112,7 @@ app.directive("dashboard", function(){
                                         </button>
 
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#!analytics">
+                                            <li><a class="dropdown-item" href="#!analytics/{{ x.ref_id }}">
                                                 <i class="fa fa-bar-chart"></i> {{ x.type }} analytics</a>
                                             </li>
                                             <li><a class="dropdown-item" href="#!setQuestions/{{ x.ref_id }}">

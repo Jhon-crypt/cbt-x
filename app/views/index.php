@@ -193,6 +193,11 @@ class views{
 
             <script src="./app/controllers/usersProfileController/usersProfile.controller.js"></script>            
 
+            <script src="./app/controllers/routeTestAnalyticsController/routeTestAnalytics.controller.js"></script>            
+
+            <script src="./app/controllers/fetchTestParticipatedUsersController/countTestParticipatedUsers.controller.js"></script>            
+
+            <script src="./app/controllers/fetchTestParticipatedUsersController/fetchTestParticipatedUsers.controller.js"></script>            
 
         </body>
     

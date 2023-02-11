@@ -24,7 +24,8 @@
             "App/models/userResultModel",
             "App/models/fetchUserResultModel",
             "App/models/searchResultModel",
-            "App/models/usersProfileModel"
+            "App/models/usersProfileModel",
+            "App/models/fetchTestParticipatedUsersModel"
         ]
     }
 }

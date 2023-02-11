@@ -14,107 +14,24 @@ app.directive("analytics", function(){
 
             <hr>
 
-            <div align="center">
-
-                <div class="card bg-light" ng-repeat="x in cards" style="width:350px;">
-
-                    <div class="text-light" style="background-color:#00AAF4">
-
-                        <div class="container pt-3 pb-3">
-                        
-                            <h2>
-                                <i class="fa fa-mortar-board"></i> {{ x.title }}
-                            </h2>
-
-                            <hr>
-                        
-                        </div>
-
-                    </div>
-
-                    <div class="card-body">
-
-                        <ul class="nav justify-content-center">
-
-                            <li class="nav-item">
-
-                                <a class="nav-link text-dark" style="text-decoration:none;">
-
-                                    <i class="fa fa-list-ul"></i> {{ x.question }} questions
-
-                                </a>
-
-                            </li>
-
-                            <li class="nav-item">
-
-                                <a class="nav-link text-dark" style="text-decoration:none;">
-
-                                    <i class="fa fa-clock-o"></i> {{ x.timeLimit }} minutes
-
-                                </a>
-
-                            </li>
-
-                            <li class="nav-item">
-
-                                <a class="nav-link text-dark" style="text-decoration:none;">
-
-                                    <i class="fa fa-star-o"></i> {{ x.status }}
-
-                                </a>
-
-                            </li>
-
-                            <li class="nav-item">
-
-                                <a class="nav-link text-dark" style="text-decoration:none;">
-
-                                    <i class="fa fa-genderless"></i> {{ x.type }}
-
-                                </a>
-
-                            </li>
-
-                            <li class="nav-item">
-
-                                <a class="nav-link text-dark" style="text-decoration:none;">
-
-                                    <i class="fa fa-table"></i> {{ x.dateCreated }}
-
-                                </a>
-
-                            </li>
-                            
-                            <li class="nav-item">
-
-                                <a class="nav-link text-dark" style="text-decoration:none;">
-
-                                    <i class="fa fa-clock-o"></i> {{ x.timeCreated }}
-
-                                </a>
-
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
             <div class="pt-5">
 
-                <h1><i class="fa fa-users"></i> Users participated <span class="badge bg-secondary">20</i> </h1>
+                <h3> 
+                    <i class="fa fa-users"></i> Users participated 
+                        <span class="badge bg-secondary"> 
+                            <span ng-controller="countParticipatedUsers">
+                                <span ng-repeat="x in result">{{ x.count }}</span>
+                            </span>
+                        </span>
+                </h3>
 
                 <span class="text-muted">
-                    <i class="fa fa-info-circle"></i> People that have taken part in your test/exam
+                    <i class="fa fa-info-circle"></i> People that have taken part in your test/exam 
                 </span>
 
                 <hr>
 
-                <ul class="nav">
+                <ul class="nav" ng-controller="fetchParticipatedUsers">
 
                     <li class="nav-item" ng-repeat="x in users">
 
@@ -126,10 +43,9 @@ app.directive("analytics", function(){
 
                                     <div align="center">
 
-                                        <img class="d-block mx-auto mb-2" src="./app/images/nftt.png"
-                                        style="object-fit:cover;border:1px solid black;height:100px;border-radius:50px;width:100px;">
-
-                                        <span class="mb-2">{{ x.username }}</span><br>
+                                        <i class="fa fa-user-circle-o mb-3" style="font-size:50px;"></i> <br>
+                                        
+                                        <span class="mb-2">{{ x.infoFromUser }}</span><br>
 
                                         <button class="btn btn-md" style="background-color:orange;">
                                             Score : {{ x.score }}

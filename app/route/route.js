@@ -28,12 +28,6 @@ $routeProvider
     .when("/delete", {
         templateUrl : "./app/views/deleteView/delete.view.html"
     })
-    .when("/analytics", {
-        templateUrl : "./app/views/analyticsView/analytics.view.html"
-    })
-    .when("/practice", {
-        templateUrl : "./app/views/practiceView/practice.view.html"
-    })
     .when("/end", {
         templateUrl : "./app/views/practiceView/end.view.html"
     })
@@ -62,6 +56,10 @@ $routeProvider
     .when("/userInfo/:testExamId", {
         templateUrl : "./app/views/practiceView/infoFromUser.view.html",
         controller : "routeInfoFromUser"
+    })
+    .when("/analytics/:testExamId", {
+        templateUrl : "./app/views/analyticsView/analytics.view.html",
+        controller : "routeTestAnalytics"
     })
     
 });
